@@ -1,0 +1,204 @@
+
+<?php $__env->startSection('title',$data->post_type); ?>
+<?php $__env->startSection('meta_keyword',$data->meta_keyword); ?>
+<?php $__env->startSection('meta_description',$data->meta_description); ?>
+<?php $__env->startSection('thumbnail',$data->banner); ?>
+<?php $__env->startSection('content'); ?>
+    <!-- banner section start -->
+    <section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-center uk-background-fixed" uk-height-viewport data-src="<?php echo e($data->banner ? asset('uploads/original/' . $data->banner) : ''); ?>" alt="<?php echo e($data->post_type); ?>" uk-img>
+        <div class="uk-overlay-banner uk-position-cover"></div>
+        <div class="uk-container uk-width-1-1  uk-position-relative">
+            <div class="uk-flex uk-flex-middle uk-flex-center uk-grid-collapse uk-text-center" uk-grid >
+                <div class="uk-width-1-2@m" uk-scrollspy="cls:uk-animation-slide-top-small; delay: 100; repeat: false;">
+                    <ul class="uk-breadcrumb center-underline">
+                        <li><a href="<?php echo e(url('/')); ?>" class="uk-white">Home</a></li>
+                        <li><span class="uk-primary"><?php echo e($data->uid ?? $data->post_type); ?></span></li>
+                    </ul>
+                    <div class="uk-banner-font" uk-scrollspy="target: h1,p,a; cls:uk-animation-slide-top-small; delay: 100; repeat: false;">
+                        <h1 class="uk-white"><?php echo e($data->uid ?? $data->post_type); ?></h1>
+                        <?php if($data->caption): ?>
+                            <p class="uk-white uk-text-center"><?php echo e($data->caption); ?></p>
+                        <?php endif; ?>
+                        <a class="uk-content uk-btn uk-button-text uk-white f-500" href="#section" uk-scroll=""> Scroll To Discover <span uk-icon="icon:arrow-right; ratio: 1.5"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner section end -->
+    <?php if($posts->count()>0): ?>
+        <?php $__currentLoopData = $posts->slice(0,2); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($loop->odd): ?>
+                <!-- about  hotel start -->
+                <section class="uk-section  refokus-lines about-bg1" id="section">
+                    <div class="line"></div>
+                    <div class="line uk-hidden"></div>
+                    <div class="line"></div>
+                    <div class="uk-container uk-margin-bottom">
+                        <div uk-grid>
+                            <div class="uk-width-1-3@m uk-flex uk-flex-middle">
+                                <div class="shadow"></div>
+                                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+                                    <div class="uk-slider-items uk-child-width-1-1" uk-lightbox="animation: slide">
+                                        <?php if($row->page_thumbnail): ?>
+                                            <div>
+                                                <a class="uk-inline uk-media-380" href="<?php echo e(asset('uploads/original/'.$row->page_thumbnail)); ?>">
+                                                    <img src="<?php echo e(asset('uploads/original/'.$row->page_thumbnail)); ?>" alt="<?php echo e($row->post_title); ?>">
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if(get_multiple_image($row->id)->count() > 0): ?>
+                                            <?php $__currentLoopData = get_multiple_image($row->id); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <div>
+                                                    <a class="uk-inline uk-media-380" href="<?php echo e(asset('uploads/medium/'.$image->file_name)); ?>">
+                                                        <img src="<?php echo e(asset('uploads/medium/'.$image->file_name)); ?>" alt="<?php echo e($row->title); ?>">
+                                                    </a>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if(get_multiple_image($row->id)->count() > 0): ?>
+                                        <a class="uk-position-center-left uk-position-small prev-btn" href uk-slidenav-previous uk-slider-item="previous"></a>
+                                        <a class="uk-position-center-right uk-position-small next-btn" href uk-slidenav-next uk-slider-item="next"></a>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="uk-width-2-3@m uk-flex uk-flex-middle">
+                                <div class="uk-banner-font">
+                                    <img src="<?php echo e(asset('themes-assets/img/design.png')); ?>" alt="" style="margin:0 9px 3px 0px">
+                                    <span class="uk-primary"><?php echo e($row->sub_title); ?></span>
+                                    <img src="<?php echo e(asset('themes-assets/img/arrow.png')); ?>" alt="" style="margin: 0 0px 5px 9px;">
+                                    <h2 class="uk-primary uk-margin-remove"><?php echo e($row->post_title); ?></h2>
+                                    <?php echo $row->post_content; ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- about  hotel end -->
+            <?php else: ?>
+                <!-- about another hotel start -->
+                <section class="uk-section light-bg">
+                    <div class="uk-container uk-margin-bottom">
+                        <div uk-grid>
+                            <div class="uk-width-2-3@m uk-flex uk-flex-middle">
+                                <div class="uk-banner-font">
+                                    <h2 class="uk-primary uk-margin-remove"><?php echo e($row->post_title); ?></h2>
+                                    <?php echo $row->post_content; ?>
+
+                                </div>
+                            </div>
+                            <div class="uk-width-1-3@m uk-flex uk-flex-middle">
+                                <!-- <div class="uk-media-380 uk-inline uk-transition-toggle" style="overflow:hidden;">
+                                    <img src="<?php echo e(asset('themes-assets/img/05.jpg')); ?>" class="uk-transition-scale-up uk-transition-opaque" alt="">
+                                </div> -->
+                                <div class="uk-position-relative uk-visible-toggle uk-light uk-width-1-1" tabindex="-1" uk-slider>
+                                    <div class="uk-slider-items uk-child-width-1-1" uk-lightbox="animation: slide">
+                                        <?php if($row->page_thumbnail): ?>
+                                            <div>
+                                                <div class="uk-inline uk-media-380" href="<?php echo e(asset('uploads/original/'.$row->page_thumbnail)); ?>">
+                                                    <img src="<?php echo e(asset('uploads/original/'.$row->page_thumbnail)); ?>" alt="">
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if(get_multiple_image($row->id)->count() > 0): ?>
+                                            <?php $__currentLoopData = get_multiple_image($row->id); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <div>
+                                                    <a class="uk-inline uk-media-380" href="<?php echo e(asset('uploads/medium/'.$image->file_name)); ?>">
+                                                        <img src="<?php echo e(asset('uploads/medium/'.$image->file_name)); ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if(get_multiple_image($row->id)->count() > 0): ?>
+                                        <a class="uk-position-center-left uk-position-small prev-btn" href uk-slidenav-previous uk-slider-item="previous"></a>
+                                        <a class="uk-position-center-right uk-position-small next-btn" href uk-slidenav-next uk-slider-item="next"></a>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="shadow4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- about another hotel end -->
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php endif; ?>
+    <?php if($bod->count()>0): ?>
+        <!-- team section start -->
+        <section class="uk-section">
+            <div class="uk-container">
+                <div class="uk-banner-font uk-text-center">
+                    <h2 class="uk-primary center-underline"><?php echo e($bodPostType->post_type); ?></h2>
+                </div>
+                <ul class=" uk-child-width-1-4@m uk-child-width-1-2 uk-grid-medium " uk-grid>
+                    <!--  -->
+                    <?php $__currentLoopData = $bod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li class="uk-margin-top">
+                            <div class="uk-team-list">
+                                <div class="uk-media-307 uk-inline uk-transition-toggle" style="overflow:hidden;">
+                                    <?php if($row->page_thumbnail): ?>
+                                        <img src="<?php echo e(asset('uploads/original/'.$row->page_thumbnail )); ?>" class="uk-transition-scale-up uk-transition-opaque">
+                                    <?php else: ?>
+                                        <img src="<?php echo e(asset('themes-assets/img/user.jpg')); ?>" class="uk-transition-scale-up uk-transition-opaque">
+                                    <?php endif; ?>
+                                </div>
+                                <h3 class="uk-primary uk-margin-top uk-margin-remove-bottom"> <?php echo e($row->post_title); ?></h3>
+                                <p class="uk-meta uk-black uk-margin-remove"><?php echo e($row->sub_title); ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+        </section>
+        <!-- team section end -->
+    <?php endif; ?>
+    <!-- message from section start -->
+    <?php if($posts->count()>0 && $posts[2]): ?>
+        <?php if($posts[2]->associated_posts->count() > 0): ?>
+            <section class="uk-section primary-bg uk-background-norepeat uk-background-cover uk-background-center-center " data-src="<?php echo e(asset('themes-assets/img/pattern.png')); ?>" uk-img>
+        <div class="uk-container uk-container-medium">
+            <div class="uk-banner-font uk-margin-large-bottom">
+                <h2 class="center-underline uk-text-center uk-white">Messages from Our Leadership</h2>
+            </div>
+            <div class=" uk-border-rounded uk-padding-remove-bottom">
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay:true; sets: true;">
+                    <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-1@s uk-child-width-1-1@m uk-grid-large" uk-height-match="target:.uk-testimonial;" uk-grid>
+                        <?php $__currentLoopData = $posts[2]->associated_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $row): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <!--  -->
+                            <li>
+                                <div class="uk-grid-large" uk-grid>
+                                    <div class="uk-width-1-4@s uk-flex uk-flex-center">
+                                        <div class="uk-testimonial-img uk-text-center">
+                                            <img src="<?php echo e(asset('uploads/medium/'.$row->thumbnail)); ?>" alt="" class="uk-margin-bottom">
+                                             <h2 class="uk-margin-remove uk-white" style="font-size:20px;"><?php echo e($row->title); ?></h2>
+                                             <h3 class="uk-margin-remove" style="font-size:17px; color: var(--grey);"><?php echo e($row->sub_title); ?></h3>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-expand@s">
+                                        <div class="uk-testimonial">
+                                            <div class="uk-testimonial-body f-18 message-content">
+                                               
+                                                <?php echo $row->content; ?>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--  -->
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                    <ul class="uk-slider-nav uk-dotnav  uk-margin-medium-top uk-flex-center"></ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+        <?php endif; ?>
+    <?php endif; ?>
+    <!-- message from section end -->
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('themes.default.common.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/ukeshcom/demo1/resources/views/themes/default/posttypeTemplate-about.blade.php ENDPATH**/ ?>
