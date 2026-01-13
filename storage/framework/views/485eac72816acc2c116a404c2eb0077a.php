@@ -1,1 +1,0 @@
-<script src="https://www.swiftbook.io/plugin/js/booking-service.min.js" id="propInfo" propertyid="761M7mv5e8JGsVKMAaD5XzlTzPaq42ZrwZOW50wLwJTYwMjI=" cal-rendererId="quickbook-widget" JDRN="Y"></script><div id="quickbook-widget"></div><?php /**PATH D:\xampp\htdocs\crown\resources\views/themes/default/common/check-availability.blade.php ENDPATH**/ ?>
