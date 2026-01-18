@@ -1,11 +1,7 @@
 @extends('themes.default.common.master')
-{{-- @section('title', $item->trip_title)
-@section('meta_keyword', $item->meta_keyword)
-@section('meta_description', $item->meta_description)
-@section('thumbnail', $item->thumbnail) --}}
 @section('content')
 
-    <section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed" uk-height-viewport data-src="{{ asset('theme-assets/img/mountain/mountain6.jpeg') }}" alt="" uk-img>
+    <section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed" uk-height-viewport data-src="{{ asset('theme-assets/img/mountain/mountain6.jpeg') }}" uk-img>
         <div class="uk-container uk-width-1-1 pt-150">
             <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid uk-height-match="target: .uk-same-height">
                 <div class="uk-width-3-4@m" id="container">
@@ -14,7 +10,7 @@
                             <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                         </ul>
                         <div class="uk-sub-banner-font">
-                            <h1>Search Results of <em>{{ $query }}</em></h1>
+                            <h1>Résultats de la recherche sur <em>{{ $query }}</em></h1>
                         </div>
                     </div>
                 </div>
@@ -29,10 +25,10 @@
                 <div class="uk-width-1-4@m">
                     <div class="uk-sidebar uk-grey-bg uk-padding-small " uk-sticky="offset: 90; end: !" style="border-top: 5px solid var(--primary);">
                         <div class="uk-title-font">
-                            <span class="uk-white  dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>Search Results</span>
+                            <span class="uk-white  dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>Résultats de la recherche</span>
                         </div>
                         <div class="uk-margin uk-list-select">
-                            <div>{{$totalResults}} Trips Found</div>
+                            <div>{{$totalResults}} Voyages trouvés</div>
                         </div>
                     </div>
                     <div id="my-id"></div>
@@ -74,7 +70,7 @@
                                         </div>
                                         @if($row->flight == 1)
                                         <div class="uk-margin-small-bottom">
-                                            <p class="uk-margin-remove uk-text-right uk-text-uppercase " style="font-size:15px;"> <i class="fa-solid fa-plane-up uk-margin-small-right"></i> <b>Including flight</b></p>
+                                            <p class="uk-margin-remove uk-text-right uk-text-uppercase " style="font-size:15px;"> <i class="fa-solid fa-plane-up uk-margin-small-right"></i> <b>Vol inclus</b></p>
                                         </div>
                                         @endif
                                         <p class="uk-margin-remove line-three">
@@ -86,21 +82,21 @@
                                                <div class="uk-flex uk-flex-middle uk-trip">
                                                 <i class="fa-solid fa-calendar"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Duration</p>
-                                                    <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Days</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Durée</p>
+                                                    <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Jours</p>
                                                 </div>
                                             </div>
                                             <div class="uk-flex uk-flex-middle uk-trip ">
                                                 <i class="fa-solid fa-location-dot"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Location</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Emplacement</p>
                                                     <p class="uk-trip-description uk-margin-remove">{{getDestinationNameByTripId($row->id)}}</p>
                                                 </div>
                                             </div>
                                             <div class="uk-flex uk-flex-middle uk-trip ">
                                                 <i class="fa-solid fa-calendar"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Difficulty</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Difficulté</p>
                                                     <p class="uk-trip-description uk-margin-remove">{{$row->trip_grade}}</p>
                                                 </div>
                                             </div>
@@ -111,7 +107,7 @@
                                                     <button class="uk-wish-button"id="wish-button" data-id="{{ $row->id }}"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
                                                 </div>
                                                 <div>
-                                                    <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">Know more</a>
+                                                    <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">En savoir plus</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,7 +121,7 @@
                         {!! $results->links('themes.default.common.pagination') !!}
                     </div>
                 @else
-                    <div class="uk-section uk-text-center uk-text-bold uk-text-lead"><strong>No trips found.</strong></div>
+                    <div class="uk-section uk-text-center uk-text-bold uk-text-lead"><strong>Aucun voyage trouvé.</strong></div>
                 @endif
 
             </div>

@@ -6,8 +6,8 @@
         <div class="uk-container uk-flex uk-flex-center">
             <div class="uk-card uk-card-default uk-padding uk-margin-auto-vertical border" style="padding-bottom:60px; width: 678px; max-width: 100% !important;">
                 <ul class="uk-login-tab uk-flex-center" uk-tab>
-                    <li><a href="#"><i class="fa-solid fa-unlock login-logo"></i> Sign In </a></li>
-                    <li><a href="#"><i class="fa-solid fa-user login-logo"></i>Sign Up</a></li>
+                    <li><a href="#"><i class="fa-solid fa-unlock login-logo"></i> Se connecter </a></li>
+                    <li><a href="#"><i class="fa-solid fa-user login-logo"></i>S'inscrire</a></li>
                 </ul>
 
                 <div class="uk-switcher uk-margin">
@@ -17,13 +17,13 @@
                             <input type="hidden" id="g_recaptcha_response" name="g_recaptcha_response"/>
                             <div class=" uk-child-width-1-1@m uk-grid">
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="user_email">Email Address</label>
+                                    <label class="uk-form-label uk-text-bold" for="user_email">Adresse email</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="user_email" name="email" required type="email">
                                     </div>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="pwd">Password</label>
+                                    <label class="uk-form-label uk-text-bold" for="pwd">Mot de passe</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="pwd" name="password" required type="password">
                                     </div>
@@ -31,49 +31,49 @@
                             </div>
                             <div class="uk-child-width-1-2 uk-grid">
                                 <div>
-                                    <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> Remember me </label>
+                                    <label><input class="uk-checkbox uk-margin-small-right" type="checkbox"> Souviens-toi de moi </label>
                                 </div>
                                 <div class="uk-flex uk-flex-right">
-                                    <a href="{{route('forgot.password')}}" class="uk-primary">Forgot Password ?</a>
+                                    <a href="{{route('forgot.password')}}" class="uk-primary">Mot de passe oublié ?</a>
                                 </div>
                             </div>
                             <div class="uk-margin-top uk-text-center">
-                                <button type="submit" class="uk-btn uk-btn-secondary">Sign In <span uk-icon="chevron-right"></span></button>
+                                <button type="submit" class="uk-btn uk-btn-secondary">Se connecter <span uk-icon="chevron-right"></span></button>
                             </div>
                         </form>
                     </div>
-                    <div>  
+                    <div>
                         <form class="uk-contact-form" action="{{route('user-registration')}}" method="POST">
                             @csrf
                             <input type="hidden" id="g_recaptcha_response2" name="g_recaptcha_response2"/>
                             <div class=" uk-child-width-1-1@m uk-grid">
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="users_name">Full Name</label>
+                                    <label class="uk-form-label uk-text-bold" for="users_name">Nom et prénom</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="users_name" name="name" required type="text">
                                     </div>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="users_email">Email Address</label>
+                                    <label class="uk-form-label uk-text-bold" for="users_email">Adresse email</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="users_email" name="email" required type="email">
                                     </div>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="r_pwd">Password</label>
+                                    <label class="uk-form-label uk-text-bold" for="r_pwd">Mot de passe</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="r_pwd" name="password" required type="password">
                                     </div>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="c_pwd">Confirm Password</label>
+                                    <label class="uk-form-label uk-text-bold" for="c_pwd">Confirmez le Mot de passe</label>
                                     <div class="uk-form-controls">
                                         <input class="uk-input" id="c_pwd" name="password_confirmation" required type="password">
                                     </div>
                                 </div>
                             </div>
                             <div class="uk-margin-top uk-text-center">
-                                <button type="submit" class="uk-btn uk-btn-secondary">Sign Up <span uk-icon="chevron-right"></span></button>
+                                <button type="submit" class="uk-btn uk-btn-secondary">S'inscrire <span uk-icon="chevron-right"></span></button>
                             </div>
                         </form>
                     </div>
@@ -88,7 +88,7 @@
 
 @if(session('needLogin'))
 <script>
-    toastr.info("Please login first ");
+    toastr.info("Veuillez d'abord vous connecter");
 </script>
 @endif
 

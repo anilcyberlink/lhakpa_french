@@ -28,7 +28,7 @@
             <div>
                 <div class="uk-child-width-1-1 uk-child-width-1-3@m uk-child-width-1-4@l uk-grid uk-flex uk-flex-middle">
                     <div class="uk-margin-small-bottom">
-                        <p class="uk-white f-20 uk-margin-remove"><i class="fa-solid fa-location-dot uk-secondary uk-margin-small-right"></i>Address: </p>
+                        <p class="uk-white f-20 uk-margin-remove"><i class="fa-solid fa-location-dot uk-secondary uk-margin-small-right"></i>Adresse: </p>
                         <p class="uk-white uk-margin-remove uk-text-left">{{$setting->address}}</p>
                     </div>
                     <div  class="uk-margin-small-bottom">
@@ -40,7 +40,7 @@
                         <p class="uk-white uk-margin-remove uk-text-left">{{$setting->email_primary}}</p>
                     </div>
                     <div  class="uk-margin-small-bottom">
-                        <p class="uk-white">FOLLOW US HERE: </p>
+                        <p class="uk-white">SUIVEZ-NOUS ICI: </p>
                         <div class="uk-footer-icon   uk-margin-bottom">
                             <a href="{{$setting->youtube_link}}" class="uk-icon-button uk-margin-small-right"><i class="fa-brands fa-youtube"></i></a>
                             <a href="{{$setting->facebook_link}}" class="uk-icon-button  uk-margin-small-right"><i class="fa-brands fa-facebook-f"></i></a>
@@ -56,14 +56,14 @@
     <div class="uk-container">
         <div class="uk-grid uk-grid-collapse uk-grid-match uk-margin-top uk-child-width-1-2@m">
             <div class="uk-margin-top">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44668.49294806555!2d85.3261328!3d27.708960349999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e1!3m2!1sen!2snp!4v1733741373198!5m2!1sen!2snp" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                {!! $setting->google_map2 !!}
             </div>
             <div class="uk-primary-bg uk-pattern-bg uk-padding uk-margin-top">
                 <form action="{{ route('contact') }}" method="post" class="uk-grid-small" uk-grid>
                     @csrf
                     <input type="hidden" id="g_recaptcha_response" name="g_recaptcha_response"/>
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label uk-white" for="Name">Full Name</label>
+                        <label class="uk-form-label uk-white" for="Name">Nom et prénom</label>
                         <input class="uk-input border" name="full_name" type="text" aria-label="Name" required>
                     </div>
                     <div class="uk-width-1-2@s">
@@ -75,7 +75,7 @@
                         <input class="uk-input border" name="email" type="email" aria-label="Email" required>
                     </div>
                     <div class="uk-width-1-2@s">
-                        <label class="uk-form-label uk-white" for="country">Country</label>
+                        <label class="uk-form-label uk-white" for="country">Pays</label>
                         <select class="uk-input border" name="country" id="country" required>
                             @include('themes.default.common.country')
                         </select>
@@ -83,17 +83,17 @@
                     <div class="uk-width-1-2@s">
                         <label class="uk-form-label uk-white" for="expert">Experts</label>
                         <select class="uk-input border" name="expert" id="expert">
-                            <option value="" selected>Select Expert</option>
+                            <option value="" selected>Sélectionner Expert</option>
                             @foreach ($experts as $expert)
                                 <option value="{{ $expert->id }}">{{ $expert->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="uk-width-1-1">
-                        <textarea class="uk-textarea border" rows="5" name="message" placeholder="Message" aria-label="Message"></textarea>
+                        <textarea class="uk-textarea border" rows="5" name="message" placeholder="Message supplémentaire" aria-label="Message"></textarea>
                     </div>
                     <div class="uk-width-1-1 uk-text-center uk-margin-top">
-                        <button type="submit" class="uk-btn uk-btn-secondary ">SUBMIT</button>
+                        <button type="submit" class="uk-btn uk-btn-secondary ">SOUMETTRE</button>
                     </div>
                 </form>
             </div>
@@ -106,8 +106,8 @@
             <div class="uk-grid-collapse uk-grid">
                 <div class="uk-width-1-4@m uk-first-column">
                     <div class="uk-title-font">
-                        <span class="uk-secondary dotted-line-black "><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>ENQUIRY</span>
-                        <h1 class="uk-primary  uk-margin-bottom">CONTACT OUR TRAVEL EXPERTS</h1>
+                        <span class="uk-secondary dotted-line-black "><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>ENQUÊTE</span>
+                        <h1 class="uk-primary  uk-margin-bottom">CONTACTEZ NOS EXPERTS VOYAGES</h1>
                         {{-- <a href="#enquiry-form" class="uk-btn uk-btn-secondary uk-margin-bottom" uk-scroll>Enquiry Now</a> --}}
                     </div>
                 </div>

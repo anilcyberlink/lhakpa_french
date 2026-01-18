@@ -1,11 +1,11 @@
 @extends('themes.default.common.master')
 @section('content')
-<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed uk-grey-bg" style="height:400px;" data-src="{{ asset('theme-assets/img/bg/pattern.png') }}" alt="" uk-img>
+<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed uk-grey-bg" style="height:400px;" data-src="{{ asset('theme-assets/img/bg/pattern.png') }}" uk-img>
     <div class="uk-container uk-width-1-1 uk-position-relative">
         <div class="uk-flex uk-flex-middle uk-flex-center uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <div class="uk-sub-banner-font uk-text-center">
-                    <h2 class="uk-secondary uk-margin-large-top">Wishlist</h2>
+                    <h2 class="uk-secondary uk-margin-large-top">Liste de souhaits</h2>
                 </div>
             </div>
         </div>
@@ -19,9 +19,9 @@
 
             </div>
             <div class="uk-width-3-4@m">
-                <p class="uk-visible@m uk-white" style="margin:2rem 0px 5rem 0;">Your Favourite Trips :
+                <p class="uk-visible@m uk-white" style="margin:2rem 0px 5rem 0;">Vos voyages préférés :
                 </p>
-         
+
                 <!--  -->
                 @if($data->count() > 0)
                 @foreach ($data as $row)
@@ -57,26 +57,26 @@
                                 <div class="uk-flex uk-flex-middle uk-trip">
                                     <i class="fa-solid fa-calendar"></i>
                                     <div>
-                                        <p class="uk-trip-title uk-margin-remove">Duration</p>
-                                        <p class="uk-trip-description uk-margin-remove">{{$row->duration}} days</p>
+                                        <p class="uk-trip-title uk-margin-remove">Durée</p>
+                                        <p class="uk-trip-description uk-margin-remove">{{$row->duration}} jours</p>
                                     </div>
                                 </div>
                                 <div class="uk-flex uk-flex-middle uk-trip ">
                                     <i class="fa-solid fa-location-dot"></i>
                                     <div>
-                                        <p class="uk-trip-title uk-margin-remove">Location</p>
+                                        <p class="uk-trip-title uk-margin-remove">Emplacement</p>
                                         <p class="uk-trip-description uk-margin-remove">{{getDestinationNameByTripId($row->id)}}</p>
                                     </div>
                                 </div>
                                 <div class="uk-flex uk-flex-middle uk-trip ">
                                     <i class="fa-solid fa-calendar"></i>
                                     <div>
-                                        <p class="uk-trip-title uk-margin-remove">Difficulty</p>
+                                        <p class="uk-trip-title uk-margin-remove">Difficulté</p>
                                         <p class="uk-trip-description uk-margin-remove">{{ grade_message_trek($row->trip_grade) }}</p>
                                     </div>
                                 </div>
                                 <div class="uk-visible@s">
-                                    <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">Know more</a>
+                                    <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">En savoir plus</a>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                 </div>
                 @endforeach
                 @else
-                <h3>Wishlist is Empty!</h3> 
+                <h3>La liste de souhaits est vide !</h3>
                 @endif
                 <!--  -->
                 @if($data->count() > 0)

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>One Himalaya Ltd</title>
+    <title>Lhakpa Trekking</title>
     <style>
         table {
             border-collapse: collapse;
@@ -40,8 +40,8 @@
             <td><strong>Trip</strong></td>
             <td>{{ tripdetail($trip)->trip_title }}</td>
         </tr>
-    
-        
+
+
         <tr>
             <td><strong>Message</strong></td>
             <td>{{ $messages }}</td>

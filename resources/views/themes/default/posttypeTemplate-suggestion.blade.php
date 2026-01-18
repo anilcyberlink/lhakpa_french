@@ -52,7 +52,7 @@
             @endif
         @endforeach
         @if($post && $post->images->isNotEmpty())
-            <li><a href="#" class="green-border uk-margin-small-top">Official Documents</a></li>
+            <li><a href="#" class="green-border uk-margin-small-top">Documents Officiels</a></li>
         @endif
     </ul>
 

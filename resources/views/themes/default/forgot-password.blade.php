@@ -6,7 +6,7 @@
         <div class="uk-container uk-flex uk-flex-center">
             <div class="uk-card uk-card-default uk-padding uk-margin-auto-vertical border" style="padding-bottom:60px; width: 678px; max-width: 100% !important;">
                 <ul class="uk-login-tab uk-flex-center" uk-tab>
-                    <li><a href="#"><i class="fa-solid fa-key login-logo"></i> Forgot Password </a></li>
+                    <li><a href="#"><i class="fa-solid fa-key login-logo"></i> Mot de passe oublié ?</a></li>
                 </ul>
                 <div class="uk-switcher uk-margin">
                     <div>
@@ -14,17 +14,17 @@
                             @csrf
                             <div class=" uk-child-width-1-1@m uk-grid">
                                 <div class="uk-margin-small-top">
-                                    <label class="uk-form-label uk-text-bold" for="user_email">Email Address</label>
+                                    <label class="uk-form-label uk-text-bold" for="user_email">Adresse email</label>
                                     <div class="uk-form-controls">
-                                        <input class="uk-input" id="user_email" placeholder="Enter your valid email address" name="email" required type="email">
+                                        <input class="uk-input" id="user_email" placeholder="Veuillez saisir votre adresse e-mail valide." name="email" required type="email">
                                     </div>
                                 </div>
                                 <div class="uk-margin-small-top">
-                                    <p>A reset link will be sent to your email. Please check your email after the form submission.</p>
+                                    <p>Un lien de réinitialisation sera envoyé à votre e-mail. Vérifiez votre boîte mail après l’envoi du formulaire.</p>
                                 </div>
                             </div>
                             <div class="uk-margin-top uk-text-center">
-                                <button type="submit" class="uk-btn uk-btn-secondary">Submit <span uk-icon="chevron-right"></span></button>
+                                <button type="submit" class="uk-btn uk-btn-secondary">Soumettre <span uk-icon="chevron-right"></span></button>
                             </div>
                         </form>
                     </div>
