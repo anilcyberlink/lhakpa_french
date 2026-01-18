@@ -117,12 +117,12 @@
             top: 10px !important; /* Adjust as needed */
             right: 10px !important; /* Adjust as needed */
             z-index: 100000 !important;
-        }  
+        }
     </style>
 </head>
 
 <body>
-    
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -191,13 +191,13 @@
             <!-- top nav menu -->
             <div class="uk-visible@l uk-container uk-white " style="position:relative;z-index:1000;">
                 <div class=" uk-flex uk-flex-middle uk-grid-collapse uk-grid uk-margin-top uk-top-nav">
-                  
+
                     <div class="uk-width-auto@m uk-flex">
                         <a href="{{ url('/') }}"> <img src="{{asset('theme-assets/img/white-lhakpa.png')}}" width="200" alt=""></a>
                         <!--<h2  class="uk-dark text-container" style="font-size: 20px; color: white; margin-top: 22px; margin-left: 19px;">-->
                         <!--    Your Travel Partner in Nepal-->
                         <!--</h2>-->
-                        <img src="{{asset('theme-assets/img/Final-Change-white.gif')}}"  alt="" style="height: 76px;width: auto; margin-left:15px;">
+                        <img src="{{asset('theme-assets/img/Final-Change-white.gif')}}" style="height: 76px;width: auto; margin-left:15px;">
                     </div>
                     <div class="uk-width-expand@m">
                         <ul class="uk-flex uk-flex-right uk-topnavbar-ul uk-margin-bottom">
@@ -211,7 +211,7 @@
                                 <li class="border-right"><a href="{{route('page.posttype_detail',$tourism->uri)}}">{{ $tourism->post_type }}</a></li>
                             @endif
                         </ul>
-                        <ul class="uk-flex uk-flex-right uk-topnavbar-ul">  
+                        <ul class="uk-flex uk-flex-right uk-topnavbar-ul">
                             {{-- <li class="border-right">
                                 <i class="fa-solid fa-phone uk-margin-small-right"></i> {{ $setting->phone }}
                             </li> --}}
@@ -223,18 +223,18 @@
                             <li class="border-right">
                                 @if(Auth::check())
                                 <a href="{{ route('user-wishlist') }}">
-                                    <i class="fa-solid fa-heart uk-margin-small-right"></i>Favourites [{{ Auth::user()->wishlists->count()}}]
+                                    <i class="fa-solid fa-heart uk-margin-small-right"></i>Favoris [{{ Auth::user()->wishlists->count()}}]
                                 </a>
                                 @else
                                 <a href="{{ route('user-wishlist') }}">
-                                    <i class="fa-solid fa-heart uk-margin-small-right"></i>My Favourite 
+                                    <i class="fa-solid fa-heart uk-margin-small-right"></i>Mon préféré
                                 </a>
                                 @endif
                              </li>
                              @if(Auth::check() && Auth::user()->roles=='user')
                              <li class="border-right">
                                 <a href="{{ route('user-profile') }}" >
-                                    <i class="fa-solid fa-user uk-margin-small-right"></i>Hi, {{ explode(' ', Auth::user()->name)[0] }}
+                                    <i class="fa-solid fa-user uk-margin-small-right"></i>Salut, {{ explode(' ', Auth::user()->name)[0] }}
                                 </a>
                              </li>
                              @else
@@ -243,7 +243,7 @@
                                 <!--    <i class="fa-solid fa-user uk-margin-small-right"></i>User Login-->
                                 <!--</a>-->
                                 <a href="{{ route('login.form') }}" >
-                                    <i class="fa-solid fa-user uk-margin-small-right"></i>User Login
+                                    <i class="fa-solid fa-user uk-margin-small-right"></i>Connexion
                                 </a>
                              </li>
                              @endif
@@ -263,14 +263,14 @@
                     <div class="uk-container">
                         <nav class="uk-navbar d-flex uk-flex-middle" uk-navbar="dropbar: true; uk-dropbar-top">
                             <div class="uk-navbar-left">
-                            
+
                                 <a href="{{ url('/') }}" class="uk-logo-dark"> <img src="{{asset('theme-assets/img/green-lhakpa.png')}}" width="180" alt=""></a>
-                             
+
                             </div>
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav uk-position-relative">
                                     <li>
-                                        <a> Company <span uk-navbar-parent-icon></span></a>
+                                        <a> Entreprise <span uk-navbar-parent-icon></span></a>
                                         <div class="uk-dropbar uk-dropbar-top uk-pattern-bg" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                             <div class="uk-position-relative uk-visible-toggle uk-light uk-container " tabindex="-1" uk-slider="autoplay: true; autoplay-interval:1500;">
                                                 <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid">
@@ -318,7 +318,7 @@
                                                                             <p class="uk-margin-bottom">
                                                                                 {{ $value->excerpt }}
                                                                             </p>
-                                                                            <a href="{{ route('trekking-list',$value->uri) }}" class="uk-btn uk-btn-secondary uk-margin-top">VIEW ALL PACKAGES</a>
+                                                                            <a href="{{ route('trekking-list',$value->uri) }}" class="uk-btn uk-btn-secondary uk-margin-top">VOIR TOUS LES FORFAITS</a>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -335,7 +335,7 @@
                                                                 <div class="uk-margin-medium-top uk-child-width-1-3 uk-grid">
                                                                     @php
                                                                         $tripList = get_triplist($value->id)->take(9)->toArray();
-                                                                        $tripChunks = array_chunk($tripList, 3); 
+                                                                        $tripChunks = array_chunk($tripList, 3);
                                                                     @endphp
                                                                     @foreach ($tripChunks as $chunk)
                                                                         <ul class="uk-list uk-highlight uk-navbar-list">
@@ -354,7 +354,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a>Activities <span uk-navbar-parent-icon></span></a>
+                                    <a>activités <span uk-navbar-parent-icon></span></a>
                                     <div class="uk-dropbar uk-dropbar-top" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class="uk-container">
                                             <div class="mega-border-top">
@@ -389,7 +389,7 @@
                                                                 </div>
                                                                 <div class="uk-flex uk-flex-middle uk-flex-between uk-margin uk-margin-remove-bottom">
                                                                     <a class="uk-nav-slider-btn prev-btn" href="#" uk-icon="icon:arrow-left; ratio: 1.5" uk-slider-item="previous" style="padding: 9px 10px !important;"></a>
-                                                                    <a href="{{ route('activity-list', $value->uri) }}" class=" uk-margin-top uk-margin-remove-bottom uk-btn uk-btn-secondary">View All <span uk-icon="icon:  arrow-right"></span></a>
+                                                                    <a href="{{ route('activity-list', $value->uri) }}" class=" uk-margin-top uk-margin-remove-bottom uk-btn uk-btn-secondary">VOIR TOUT <span uk-icon="icon:  arrow-right"></span></a>
                                                                     <a class="uk-nav-slider-btn next-btn" href="#" uk-icon="icon:arrow-right; ratio: 1.5" uk-slider-item="next" style="padding: 9px 10px !important;"></a>
                                                                 </div>
                                                             </div>
@@ -402,7 +402,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"> Travelling Style <span uk-navbar-parent-icon></span></a>
+                                    <a href="#"> Style de voyage <span uk-navbar-parent-icon></span></a>
                                     <div class="uk-dropbar uk-dropbar-top uk-pattern-bg" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class="uk-position-relative uk-visible-toggle uk-light uk-container " tabindex="-1" uk-slider>
                                             <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid" uk-height-match=".info-box">
@@ -449,7 +449,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a>Expedition <span uk-navbar-parent-icon></span></a>
+                                    <a>Expédition <span uk-navbar-parent-icon></span></a>
                                     <div class="uk-dropbar uk-dropbar-top" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class=" uk-container">
                                             <div class="mega-border-top">
@@ -468,7 +468,7 @@
                                                                         <div class="uk-title-fonts">
                                                                             <h2 class="uk-secondary">{{$value->title}}</h2>
                                                                             <p class="uk-margin-bottom">{{ $value->excerpt }}</p>
-                                                                            <a href="{{ route('expedition-list', $value->uri) }}" class="uk-btn uk-btn-secondary uk-margin-top">VIEW ALL PACKAGES</a>
+                                                                            <a href="{{ route('expedition-list', $value->uri) }}" class="uk-btn uk-btn-secondary uk-margin-top">VOIR TOUS LES FORFAITS</a>
                                                                         </div>
                                                                     </div>
                                                                     <div>
@@ -485,9 +485,9 @@
                                                                 <div class="uk-margin-medium-top uk-child-width-1-3 uk-grid">
                                                                     @php
                                                                         $tripList = get_triplist($value->id)->take(9)->toArray();
-                                                                        $tripChunks = array_chunk($tripList, 3); 
+                                                                        $tripChunks = array_chunk($tripList, 3);
                                                                     @endphp
-                                                                    
+
                                                                     @foreach ($tripChunks as $chunk)
                                                                         <ul class="uk-list uk-highlight uk-navbar-list">
                                                                             @foreach ($chunk as $item)
@@ -508,7 +508,7 @@
                         <li class="uk-flex uk-flex-middle">
                             <form class="uk-search uk-search-default" action="{{ route('searchtrip') }}" method="GET" >
                                 <input class="uk-search-input" type="search" name="query" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off">
-   
+
                                 <button type="submit" class="uk-search-icon-flip" uk-search-icon></button>
 
                                 <ul id="search-results" class="uk-list uk-dropdown uk-dropdown-bottom-left uk-width-large" style="display: none; position: absolute; background: #fff; border: 1px solid #ccc; z-index: 1000;">
@@ -536,7 +536,7 @@
                         </div>
                         <div class="uk-navbar-right" style="gap: 10px;">
                             <a href="#modal-search" uk-toggle><i class="fa-solid fa-magnifying-glass uk-white f-20 uk-margin-small-right"></i></a>
-                            
+
                             @if(Auth::check())
                                 <a href="{{ route('user-wishlist') }}">
                                     <i class="fa-solid fa-heart uk-white f-20 uk-margin-small-right"></i>[{{ Auth::user()->wishlists->count()}}]
@@ -571,7 +571,7 @@
                                     <ul class="uk-nav uk-nav-primary  uk-nav-divider uk-nav-accordion uk-margin-top" uk-nav="targets: > .js-accordion">
                                         <li class="js-accordion uk-parent">
                                             <a href="" aria-expanded="false">
-                                                Company <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
+                                                Entreprise <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
                                             </a>
                                             <ul class="uk-nav-sub two-column-nav">
                                                 @foreach ($navigations as $nav)
@@ -587,33 +587,33 @@
                                                 @foreach ($trekking as $trek)
                                                     <li><a href="{{ route('trekking-list',$trek->uri) }}"><span uk-icon="icon:   arrow-right"></span>{{$trek->title}}</a></li>
                                                 @endforeach
-                                                <li><a href="{{ route('page.trekkinglist') }}">View All</a></li>
+                                                <li><a href="{{ route('page.trekkinglist') }}">VOIR TOUT</a></li>
                                             </ul>
                                         </li>
                                         <li class="js-accordion uk-parent">
-                                            <a aria-expanded="false">Expedition
+                                            <a aria-expanded="false">Expédition
                                                 <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
                                             </a>
                                             <ul class="uk-nav-sub">
                                                 @foreach ($expedition as $row)
                                                 <li><a href="{{ route('expedition-list', $row->uri) }}"><span uk-icon="icon:   arrow-right"></span>{{ $row->title }}</a></li>
                                                 @endforeach
-                                                <li><a href="{{ route('page.expeditionlist') }}"> View All</a></li>
+                                                <li><a href="{{ route('page.expeditionlist') }}">VOIR TOUT</a></li>
                                             </ul>
                                         </li>
                                         <li class="js-accordion uk-parent">
-                                            <a aria-expanded="false"> Activities
+                                            <a aria-expanded="false"> Activités
                                                 <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
                                             </a>
                                             <ul class="uk-nav-sub">
                                                 @foreach ($activity as $row)
                                                     <li><a href="{{ route('trekking-list',$row->uri) }}"><span uk-icon="icon:   arrow-right"></span>{{ $row->title }}</a></li>
                                                 @endforeach
-                                                <li><a href="{{ route('page.activitylist') }}">View All</a></li>
+                                                <li><a href="{{ route('page.activitylist') }}">VOIR TOUT</a></li>
                                             </ul>
                                         </li>
                                         <li class="js-accordion uk-parent">
-                                            <a aria-expanded="false"> Travelling Style
+                                            <a aria-expanded="false"> Style de voyage
                                                 <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
                                             </a>
                                             <ul class="uk-nav-sub">
@@ -627,7 +627,7 @@
                                         </li>
                                         <li><a href="{{route('page.posttype_detail',$news->uri)}}">{{ $news->post_type }}</a></li>
                                         <li class="js-accordion uk-parent">
-                                            <a href="" aria-expanded="false">Useful Info
+                                            <a href="" aria-expanded="false">Informations utiles
                                                 <span uk-nav-parent-icon="" class="uk-icon uk-nav-parent-icon"></span>
                                             </a>
                                             <ul class="uk-nav-sub">
@@ -636,7 +636,7 @@
                                                 <li> <a href="{{route('page.posttype_detail',$suggestion->uri)}}"><span uk-icon="icon:   arrow-right"></span>{{ $suggestion->post_type }}</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('page.posttype_detail',$contact_us->uri) }}">Contact Us</a></li>
+                                        <li><a href="{{ route('page.posttype_detail',$contact_us->uri) }}">Contactez-nous</a></li>
                                         @if($plan_trip)
                                             <li class="uk-margin-bottom uk-margin-top">
                                                 <div class="uk-text-center uk-margin-top    ">
@@ -664,25 +664,25 @@
     </header>
     <div id="modal-form" uk-modal>
         <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical" style="padding-bottom:60px;">
-            
+
             <ul class="uk-login-tab" uk-tab>
-                <li><a href="#"><i class="fa-solid fa-unlock login-logo"></i> Sign In </a></li>
-                <li><a href="#"><i class="fa-solid fa-user login-logo"></i>Sign Up</a></li>
+                <li><a href="#"><i class="fa-solid fa-unlock login-logo"></i>Se connecter</a></li>
+                <li><a href="#"><i class="fa-solid fa-user login-logo"></i>S'inscrire</a></li>
             </ul>
 
             <div class="uk-switcher uk-margin">
-                <div> 
+                <div>
                     <form class="uk-contact-form" action="{{route('user.login')}}" method="POST">
                         @csrf
                         <div class=" uk-child-width-1-1@m uk-grid">
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="user_email">Email Address</label>
+                                <label class="uk-form-label uk-text-bold" for="user_email">Adresse email</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="user_email" name="email" required type="email">
                                 </div>
                             </div>
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="pwd">Password</label>
+                                <label class="uk-form-label uk-text-bold" for="pwd">Mot de passe</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="pwd" name="password" required type="password">
                                 </div>
@@ -690,48 +690,48 @@
                         </div>
                         <div class="uk-child-width-1-2 uk-grid">
                             <div>
-                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" > Remember me </label>
+                                <label><input class="uk-checkbox uk-margin-small-right" type="checkbox" > Souviens-toi de moi </label>
                             </div>
                             <div class="uk-flex uk-flex-right">
-                                <a href="{{route('forgot.password')}}" class="uk-primary">Forgot Password ?</a>
+                                <a href="{{route('forgot.password')}}" class="uk-primary">Mot de passe oublié ?</a>
                             </div>
                         </div>
                         <div class="uk-margin-top uk-text-center">
-                            <button type="submit" class="uk-btn uk-btn-secondary">Sign In <span uk-icon="chevron-right"></span></button>
+                            <button type="submit" class="uk-btn uk-btn-secondary">Se connecter <span uk-icon="chevron-right"></span></button>
                         </div>
                     </form>
                 </div>
-                <div> 
+                <div>
                     <form class="uk-contact-form" action="{{route('user-registration')}}" method="POST">
                         @csrf
                         <div class=" uk-child-width-1-1@m uk-grid">
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="full_name">Full Name</label>
+                                <label class="uk-form-label uk-text-bold" for="full_name">Nom et prénom</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="full_name" name="name" required type="text">
                                 </div>
                             </div>
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="email">Email Address</label>
+                                <label class="uk-form-label uk-text-bold" for="email">Adresse email</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="email" name="email" required type="email">
                                 </div>
                             </div>
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="password">Password</label>
+                                <label class="uk-form-label uk-text-bold" for="password">Mot de passe</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="password" name="password" required type="password">
                                 </div>
                             </div>
                             <div class="uk-margin-small-top">
-                                <label class="uk-form-label uk-text-bold" for="c_pwd">Confirm Password</label>
+                                <label class="uk-form-label uk-text-bold" for="c_pwd">Confirmez le mot de passe</label>
                                 <div class="uk-form-controls">
                                     <input class="uk-input" id="c_pwd" name="password_confirmation" required type="password">
                                 </div>
                             </div>
                         </div>
                         <div class="uk-margin-top uk-text-center">
-                            <button type="submit" class="uk-btn uk-btn-secondary">Sign Up <span uk-icon="chevron-right"></span></button>
+                            <button type="submit" class="uk-btn uk-btn-secondary">S'inscrire<span uk-icon="chevron-right"></span></button>
                         </div>
                     </form>
                 </div>
@@ -745,35 +745,35 @@
         document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById("search-input");
             const resultsDropdown = document.getElementById("search-results");
-        
+
             searchInput.addEventListener("input", function() {
                 let query = this.value.trim();
-        
+
                 if (query.length < 2) {
                     resultsDropdown.style.display = "none";
                     return;
                 }
-        
+
                 fetch(`/search-suggestions?query=${query}`)
                     .then(response => response.json())
                     .then(data => {
                         resultsDropdown.innerHTML = "";
-                        
+
                         if (data.length > 0) {
                             data.forEach(item => {
                                 let listItem = document.createElement("li");
                                 listItem.innerHTML = `<a href="/page/${item.uri}.html" class="uk-link-text">${item.trip_title}</a>`;
                                 listItem.style.padding = "8px";
                                 listItem.style.cursor = "pointer";
-        
+
                                 listItem.addEventListener("click", function() {
                                     searchInput.value = item.trip_title;
                                     resultsDropdown.style.display = "none";
                                 });
-        
+
                                 resultsDropdown.appendChild(listItem);
                             });
-        
+
                             resultsDropdown.style.display = "block";
                         } else {
                             resultsDropdown.style.display = "none";
@@ -781,7 +781,7 @@
                     })
                     .catch(error => console.error("Error fetching search suggestions:", error));
             });
-        
+
             document.addEventListener("click", function(e) {
                 if (!searchInput.contains(e.target) && !resultsDropdown.contains(e.target)) {
                     resultsDropdown.style.display = "none";
@@ -789,4 +789,3 @@
             });
         });
     </script>
-        

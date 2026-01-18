@@ -11,7 +11,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                     <li><span class="uk-secondary">{{ $data->post_type }}</span></li>
                 </ul>
                 <div class="uk-sub-banner-font">
@@ -50,7 +50,7 @@
             @if($row->id != 195)
                 <li><a href="#" class="green-border uk-margin-small-top">{{$row->post_title}}</a></li>
             @endif
-        @endforeach 
+        @endforeach
         @if($post && $post->images->isNotEmpty())
             <li><a href="#" class="green-border uk-margin-small-top">Official Documents</a></li>
         @endif

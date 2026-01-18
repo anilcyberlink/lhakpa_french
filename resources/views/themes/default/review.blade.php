@@ -6,7 +6,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                     <li><span class="uk-secondary">Review</span></li>
                 </ul>
                 <div class="uk-sub-banner-font">
@@ -42,7 +42,7 @@
                             <div class="uk-width-4-5@m">
                                 <div class="uk-light-bg border uk-padding">
                                    <p class="uk-margin-remove">
-                                       {{ $value->message }}             
+                                       {{ $value->message }}
                                        </p>
                                 </div>
                             </div>

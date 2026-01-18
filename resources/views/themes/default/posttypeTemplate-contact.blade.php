@@ -11,7 +11,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                     <li><span class="uk-secondary">{{ $data->post_type }}</span></li>
                 </ul>
                 <div class="uk-sub-banner-font">
@@ -128,7 +128,7 @@
                                         <span style="font-size:14px;"><i class="fa-solid fa-language uk-margin-small-right uk-secondary uk-visible@s" aria-hidden="true"></i>{{ $expert->language }}</span>
                                         <br>
                                         <div class="flag">
-                                           
+
                                             {{-- <img src="assets/img/flag1.jpg" alt="">
                                             <img src="assets/img/flag2.jpg" alt="">
                                             <img src="assets/img/flag3.jpg" alt=""> --}}

@@ -13,7 +13,7 @@
                   <div class="uk-banner-font uk-width-1-1 uk-width-1-2@m uk-text-center uk-margin-large-top">
                      <h1>{{$banner->title}}</h1>
                   </div>
-                  <a href="{{ $banner->link }}" class="uk-btn uk-btn-secondary">Discover Trip</a>
+                  <a href="{{ $banner->link }}" class="uk-btn uk-btn-secondary">Découverte du voyage</a>
                </div>
             </div>
          @else
@@ -26,7 +26,7 @@
                         <div class="uk-banner-font uk-width-1-1 uk-width-1-2@m uk-text-center uk-margin-large-top" >
                            <h1>{{$banner->title}}</h1>
                         </div>
-                        <a href="{{ $banner->link }}" class="uk-btn uk-btn-secondary">Discover Trip</a>
+                        <a href="{{ $banner->link }}" class="uk-btn uk-btn-secondary">Découverte du voyage</a>
                      </div>
                </div>
             </div>
@@ -43,10 +43,10 @@
          <div class="uk-grid-match uk-flex uk-flex-middle" uk-grid>
                <div class="uk-width-1-3@m">
                   <div class="uk-title-font">
-                     <span class="uk-secondary  dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>TRAVEL WITH US</span>
+                     <span class="uk-secondary  dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>VOYAGEZ AVEC NOUS</span>
                      <h1 class="uk-primary">{{$setting->text1_title}}</h1>
                      <p>{{$setting->text1_sub_title}}</p>
-                     <a href="{{ route('page.activitylist') }}" class="uk-btn uk-btn-secondary">Discover All Activities</a>
+                     <a href="{{ route('page.activitylist') }}" class="uk-btn uk-btn-secondary">Découvrez toutes les activités</a>
                   </div>
                </div>
                <div class="uk-width-2-3@m">
@@ -89,14 +89,14 @@
           <div class=" uk-width-3-4@m  uk-padding uk-padding-left uk-index-responsive-padding">
               <div class="uk-container uk-flex uk-flex-middle uk-margin-top uk-margin-bottom">
                   <div class="uk-title-font uk-contents">
-                     <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>TRAVEL WITH US</span>
+                     <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>VOYAGEZ AVEC NOUS</span>
                     <h1 class="uk-secondary">{{$about_us->post_type}}</h1>
                     <!-- <span class="uk-white uk-contents">  -->
                      {!! $about_us->content !!}
                      <!-- </span> -->
-                    <a href="{{route('page.posttype_detail',$about_us->uri)}}" class="uk-about-btn">Learn More <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
+                    <a href="{{route('page.posttype_detail',$about_us->uri)}}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="uk-width-1-4@m uk-padding uk-flex uk-flex-center uk-flex-middle ">
             <img src="{{asset('theme-assets/img/logo.gif')}}" class="about-img" alt="{{$about_us->post_type}}">
@@ -112,7 +112,7 @@
          <div class="uk-grid">
                <div class="uk-width-1-4@m">
                   <div class="uk-title-font">
-                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>PACKAGES</span>
+                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>FORFAITS</span>
                      <h1 class="uk-primary">{{$setting->text2_title}}</h1>
                   </div>
                </div>
@@ -149,21 +149,21 @@
                               <div class="uk-flex uk-flex-middle uk-trip">
                                  <i class="fa-solid fa-calendar"></i>
                                  <div>
-                                       <p class="uk-trip-title uk-margin-remove">Duration</p>
-                                       <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Days</p>
+                                       <p class="uk-trip-title uk-margin-remove">Durée</p>
+                                       <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Jours</p>
                                  </div>
                               </div>
                               <div class="uk-flex uk-flex-middle uk-trip ">
                                  <i class="fa-solid fa-location-dot"></i>
                                  <div>
-                                       <p class="uk-trip-title uk-margin-remove">Location</p>
+                                       <p class="uk-trip-title uk-margin-remove">Emplacement</p>
                                        <p class="uk-trip-description uk-margin-remove">{{ optional($row->destinations()->first())->title }}</p>
                                  </div>
                               </div>
                               <div class="uk-flex uk-flex-middle uk-trip ">
                                  <i class="fa-solid fa-calendar"></i>
                                  <div>
-                                       <p class="uk-trip-title uk-margin-remove">Difficulty</p>
+                                       <p class="uk-trip-title uk-margin-remove">Difficulté</p>
                                        <p class="uk-trip-description uk-margin-remove">{{($row->trip_grade)}}</p>
                                  </div>
                               </div>
@@ -183,13 +183,13 @@
 
    <!--start adventure section -->
    <!-- end adventure section -->
-   <section class="uk-position-relative uk-section  uk-background-norepeat 
+   <section class="uk-position-relative uk-section  uk-background-norepeat
       uk-background-cover" uk-parallax="bgx: -100; easing: 1;" data-src="{{asset('theme-assets/img/bg/01.jpg')}}" uk-img style="padding-bottom: 105px;">
       <div class="uk-overlay-pink uk-position-cover"></div>
       <div class="uk-container uk-position-relative">
          <div class="uk-text-center uk-title-font">
-               <span class="uk-white">Travel With Us</span>
-               <h1 class="uk-white">Last minute adventure</h2>
+               <span class="uk-white">Voyagez avec nous</span>
+               <h1 class="uk-white">Aventure de dernière minute</h2>
          </div>
          <div class="uk-adv-padding">
                <div class="uk-position-relative uk-visible-toggle uk-margin-medium-top" tabindex="-1" uk-slider=" sets: true; autoplay: true;  autoplay-interval: 3000;">
@@ -258,7 +258,7 @@
                                 <div class="uk-overlay uk-overlay-default uk-position-bottom uk-adv-overlay">
                                    <div>
                                         <span class="uk-badge">
-                                             @if ($row->activities()->exists()) 
+                                             @if ($row->activities()->exists())
                                                 {{ $row->activities()->first()->title }}
                                              @endif
                                         </span>
@@ -284,28 +284,28 @@
                                                 <div class="uk-flex uk-flex-middle">
                                              <i class="fa-regular fa-calendar uk-margin-small-right uk-white" style="font-size:25px;"></i>
                                              <div>
-                                                <p class="uk-small-title uk-margin-remove uk-white">Duration</p>
-                                                <p class="uk-small-description uk-margin-remove uk-white">{{ $row->duration }} Days</p>
+                                                <p class="uk-small-title uk-margin-remove uk-white">Durée</p>
+                                                <p class="uk-small-description uk-margin-remove uk-white">{{ $row->duration }} Jours</p>
                                              </div>
                                           </div>
                                           <div class="uk-flex uk-flex-middle">
                                              <i class="fa-solid fa-location-dot uk-margin-small-right uk-white" style="font-size:25px;"></i>
                                              <div>
-                                                <p class="uk-small-title uk-margin-remove uk-white">Location</p>
+                                                <p class="uk-small-title uk-margin-remove uk-white">Emplacement</p>
                                                 <p class="uk-small-description uk-margin-remove uk-white">{{ $row->destinations?->first()?->title }}</p>
                                              </div>
                                           </div>
                                           <div class="uk-flex uk-flex-middle">
                                              <i class="fa-solid fa-calendar uk-margin-small-right uk-white" style="font-size:25px;"></i>
                                              <div>
-                                                <p class="uk-small-title uk-margin-remove uk-white">Difficulty</p>
+                                                <p class="uk-small-title uk-margin-remove uk-white">Difficulté</p>
                                                 <p class="uk-small-description uk-margin-remove uk-white">{{ ($row->trip_grade)}}</p>
                                              </div>
                                           </div>
                                             </div>
                                         </div>
                                         <div class="uk-width-1-4@m uk-text-left uk-text-right@m">
-                                             <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-about-btn">Learn More <i class="fa-solid fa-circle-arrow-right uk-margin-small-top"></i></a>
+                                             <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-top"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -313,12 +313,12 @@
                             </a>
                         </li>
                      @endforeach
-                     
+
                   </ul>
-                  
+
                      <a class=" uk-position-center-left uk-position-small prev-btn uk-white" href uk-slidenav-previous uk-slider-item="previous"></a>
                      <a class=" uk-position-center-right uk-position-small next-btn uk-white" href uk-slidenav-next uk-slider-item="next"></a>
-                 
+
                </div>
          </div>
       </div>
@@ -331,14 +331,14 @@
                <div class="uk-width-3-4@s">
                   <div class="uk-title-font">
                      <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>Destination</span>
-                     <h1 class="uk-primary">Explore by destination</h1>
+                     <h1 class="uk-primary">Explorer par destination</h1>
                   </div>
                </div>
                <div class="uk-width-1-4@s uk-flex uk-flex-right  uk-flex-middle uk-visible@s">
-                  <a href="{{ route('page.trekkinglist') }}" class="uk-btn uk-btn-secondary">View All</a>
+                  <a href="{{ route('page.trekkinglist') }}" class="uk-btn uk-btn-secondary">Tout afficher</a>
                </div>
          </div>
-      
+
       <div class="uk-position-relative uk-visible-toggle uk-light uk-margin-top" tabindex="-1" uk-slider="sets: true">
          <div class="uk-slider-items uk-child-width-1-1  uk-child-width-1-2@m uk-child-width-1-3@l uk-grid">
             @foreach ($trekking as $trek)
@@ -355,10 +355,10 @@
                         <!--   <p class="uk-white">{{$trek->sub_title}}</p><br> <br>-->
                         <!--</div>-->
                         <div>
-                           <a href="{{ route('trekking-list',$trek->uri) }}" class="uk-about-btn">Learn More <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
+                           <a href="{{ route('trekking-list',$trek->uri) }}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
                         </div>
                      </div>
-                     
+
                   </a>
                </div>
             @endforeach
@@ -370,7 +370,7 @@
       </div>
       </div>
       <div class="uk-margin-large-top uk-margin-left uk-hidden@s">
-          <a href="{{ route('page.trekkinglist') }}" class="uk-btn uk-btn-secondary">View All</a>
+          <a href="{{ route('page.trekkinglist') }}" class="uk-btn uk-btn-secondary">Tout afficher</a>
       </div>
    </section>
    <!-- end destination section -->
@@ -381,12 +381,12 @@
          <div class="uk-grid">
                <div class="uk-width-3-4@s">
                   <div class="uk-title-font">
-                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>BLOGS</span>
-                     <h1 class="uk-primary">LATEST BLOG & NEWS</h1>
+                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>BLOGUES</span>
+                     <h1 class="uk-primary">DERNIER ARTICLE DE BLOG ET ACTUALITÉS</h1>
                   </div>
                </div>
                <div class="uk-width-1-4@s uk-flex uk-flex-right  uk-flex-middle uk-visible@s">
-                  <a href="{{route('page.posttype_detail',$blog->uri)}}" class="uk-btn uk-btn-secondary">View All</a>
+                  <a href="{{route('page.posttype_detail',$blog->uri)}}" class="uk-btn uk-btn-secondary">Tout afficher</a>
                </div>
          </div>
         <div class="uk-position-relative uk-visible-toggle uk-light uk-margin-top" tabindex="-1" uk-slider="sets: true">
@@ -417,7 +417,7 @@
 
          </div>
          <div class="uk-margin-large-top  uk-hidden@s">
-            <a href="{{route('page.posttype_detail',$blog->uri)}}" class="uk-btn uk-btn-secondary">View All</a>
+            <a href="{{route('page.posttype_detail',$blog->uri)}}" class="uk-btn uk-btn-secondary">Tout afficher</a>
          </div>
       </div>
    </section>
@@ -432,8 +432,8 @@
          <div class="uk-primary-bg uk-padding uk-padding-left uk-about-text uk-index-responsive-padding" style="line-break: anywhere;">
                <div class="uk-container uk-flex uk-flex-middle uk-margin-top">
                   <div class="uk-width-1-1">
-                     <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>TRAVEL WITH US</span>
-                     <h1 class="uk-secondary  uk-margin-remove" style="font-size:2rem;">What people say</h1>
+                     <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>VOYAGEZ AVEC NOUS</span>
+                     <h1 class="uk-secondary  uk-margin-remove" style="font-size:2rem;">Ce que disent les gens</h1>
                      <div uk-slider="autoplay : true; autoplay-interval: 6000; pause-on-hover: true; finite: false;">
                            <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
                               <div class="uk-slider-items">
@@ -444,11 +444,11 @@
                                                 <i class="fa-solid fa-star"></i>
                                              @endfor
                                           </div>
-                                           <span class=" uk-contents"> 
-                                             <p  id="text" class="message-container uk-margin-top"> 
+                                           <span class=" uk-contents">
+                                             <p  id="text" class="message-container uk-margin-top">
                                              {{ $value->message }}
                                              </p>
-                                             <button id="toggleBtn" class="read-more-btn">Read More </button>
+                                             <button id="" class="read-more-btn">En savoir plus </button>
                                               </span>
                                              <div class="uk-flex uk-margin-top">
                                                 <img src="{{$value->image ? asset('uploads/reviews/'.$value->image) : asset('theme-assets/img/user.png')}}" class="uk-testimonial-img" alt="">
@@ -456,20 +456,20 @@
                                                    <h2 class="uk-secondary">{{ $value->full_name }}</h2>
                                                    <span class="uk-white">{{ $value->country }}</span>
                                                   @if(trip_count($value->user_id) >= 1)
-                                                   <p class="uk-white uk-margin-top"> {{trip_count($value->user_id)}} trip with Lhakpa Treks</p>
+                                                   <p class="uk-white uk-margin-top"> {{trip_count($value->user_id)}} voyage avec Lhakpa Treks</p>
                                                    @endif
                                                 </div>
                                              </div>
                                        </div>
                                  @endforeach
-                          
+
                               </div>
 
                               <ul class="uk-slider-nav uk-dotnav uk-flex uk-flex-center"></ul>
                            </div>
                      </div>
                      <div class="uk-margin-medium-top uk-text-center">
-                        <a href="{{route('all-review')}}" class="uk-btn uk-btn-primary" >View All Review</a>
+                        <a href="{{route('all-review')}}" class="uk-btn uk-btn-primary" >Afficher tous les avis</a>
                     </div>
                   </div>
                </div>
@@ -478,13 +478,52 @@
       </div>
    </section>
    <!-- end testimonial section -->
-   <script>
-    const text = document.getElementById('text');
-    const btn = document.getElementById('toggleBtn');
+   <style>
+       .message-container {
+            display: -webkit-box;
+            -webkit-line-clamp: 5;        /* number of lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-    btn.addEventListener('click', () => {
-      text.classList.toggle('expanded');
-      btn.textContent = text.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        .message-container.expanded {
+            -webkit-line-clamp: unset;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #1e87f0;
+            cursor: pointer;
+            padding: 0;
+            font-weight: 600;
+        }
+
+   </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.message-container').forEach((text) => {
+            const btn = text.nextElementSibling;
+
+            // Show button only if text is actually truncated
+            if (text.scrollHeight > text.clientHeight) {
+                btn.hidden = false;
+            }
+
+            btn.addEventListener('click', () => {
+                text.classList.toggle('expanded');
+                btn.textContent = text.classList.contains('expanded')
+                    ? 'Lire moins'
+                    : 'En savoir plus';
+            });
+        });
     });
+    // const text = document.getElementById('text');
+    // const btn = document.getElementById('toggleBtn');
+
+    // btn.addEventListener('click', () => {
+    //   text.classList.toggle('expanded');
+    //   btn.textContent = text.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    // });
   </script>
 @stop

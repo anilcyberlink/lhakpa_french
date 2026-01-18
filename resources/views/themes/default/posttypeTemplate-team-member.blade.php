@@ -11,7 +11,7 @@
             <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
                 <div class="uk-width-1-1@m">
                     <ul class="uk-breadcrumb">
-                        <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                        <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                         {{-- <li><span class="uk-secondary">Your Group</span></li> --}}
                     </ul>
                     <div class="uk-sub-banner-font">
@@ -87,23 +87,23 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const teamLinks = document.querySelectorAll('.team-link');
-        
+
             teamLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault(); // prevent default link behavior
-        
+
                     document.getElementById('modal-team-name').textContent = link.dataset.name;
                     document.getElementById('modal-team-position').textContent = link.dataset.position;
                     document.getElementById('modal-team-image').src = link.dataset.image;
                     document.getElementById('modal-team-phone').textContent = link.dataset.phone || "";
                     document.getElementById('modal-team-email').textContent = link.dataset.email || "";
                     document.getElementById('modal-team-description').innerHTML = link.dataset.description || "";
-        
+
                     UIkit.modal('#modal-container').show(); // open modal
                 });
             });
         });
     </script>
-    
+
 
 @endsection

@@ -2,7 +2,7 @@
     <div class="uk-top-footer uk-container" style="padding-top:10px; padding-bottom:20px;">
         <div class="uk-child-width-1-2@s uk-grid">
             <div class=" uk-flex" style="align-items: baseline; " uk-scrollspy="cls:uk-animation-fade; delay: 500;">
-                <h3 class="uk-margin-remove" style="font-size:22px;">Associated With</h3>
+                <h3 class="uk-margin-remove" style="font-size:22px;">Associé à</h3>
                 <div class="uk-margin-top uk-top-img uk-margin-small-left">
                     @foreach ($associated as $value)
                         <img src="{{ asset('uploads/medium/' . $value->file_name) }}" loading="lazy">
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div  class=" uk-flex uk-flex-left uk-flex-right@m " style="align-items: baseline;" uk-scrollspy="cls:uk-animation-fade; delay: 500;">
-                <h3 class="uk-margin-remove" style="font-size:22px;">We Accept</h3>
+                <h3 class="uk-margin-remove" style="font-size:22px;">Nous acceptons</h3>
                 <div class="uk-margin-top uk-payment uk-margin-small-left">
                     @foreach ($pay_partners as $value)
                         <img src="{{ asset('uploads/medium/' . $value->file_name) }}" loading="lazy">
@@ -48,7 +48,7 @@
                         </ul>
                     </div>
                     <div>
-                        <p class="uk-margin-remove "><a href="{{ route('page.activitylist') }}" class="uk-secondary f-20 fw-600 uk-text-uppercase ">Activities</a></p>
+                        <p class="uk-margin-remove "><a href="{{ route('page.activitylist') }}" class="uk-secondary f-20 fw-600 uk-text-uppercase ">Activités</a></p>
                         <ul class=" footer-list">
                             @foreach ($activity as $row)
                                 <li> <a href="{{ route('activity-list', $row->uri) }}">{{ $row->title }}</a> </li>
@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                     <div>
-                        <p class="uk-margin-remove "><a href="{{ route('page.expeditionlist') }}" class="uk-secondary f-20 fw-600 uk-text-uppercase ">Expedition</a></p>
+                        <p class="uk-margin-remove "><a href="{{ route('page.expeditionlist') }}" class="uk-secondary f-20 fw-600 uk-text-uppercase ">Expédition</a></p>
                         <ul class=" footer-list">
                             @foreach ($expedition as $row)
                                 <li> <a href="{{ route('expedition-list', $row->uri) }}">{{ $row->title }}</a> </li>
@@ -66,12 +66,12 @@
                     </div>
 
                     <div>
-                        <p class="uk-margin-remove "><a href="#" class="uk-secondary f-20 fw-600 uk-text-uppercase ">Useful Links</a></p>
+                        <p class="uk-margin-remove "><a class="uk-secondary f-20 fw-600 uk-text-uppercase ">Liens utiles</a></p>
                         <ul class=" footer-list">
                             @foreach ($navigations as $nav)
                                 <li><a href="{{route('page.posttype_detail',$nav->uri)}}">{{$nav->post_type}} </a></li>
                             @endforeach
-                            <li><a href="{{ route('feedback') }}">Give Feedback</a></li>
+                            <li><a href="{{ route('feedback') }}">Donner votre avis</a></li>
                         </ul>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
 
     <div class="small-footer uk-child-width-1-2@m uk-padding uk-padding-remove-vertical uk-flex uk-flex-middle uk-pattern-bg " uk-grid >
         <div class="uk-text-center uk-text-left@m uk-margin-top" uk-scrollspy="cls: uk-animation-fade;  delay: 300; repeat: false">
-            <div class="uk-white">Made with <i class="fa fa-heart" style="color: #ea050a;"></i> by <a href="https://cyberlink.com.np/" target="_blank" class="uk-white">Cyberlink Pvt.Ltd.</a></div>
+            <div class="uk-white">Fabriqué avec <i class="fa fa-heart" style="color: #ea050a;"></i> par <a href="https://cyberlink.com.np/" target="_blank" class="uk-white">Cyberlink Pvt.Ltd.</a></div>
         </div>
         <div class="uk-footer-icon uk-text-right@m uk-text-center uk-margin-top uk-margin-bottom" uk-scrollspy="cls: uk-animation-fade;  delay: 300; repeat: false">
             <a href="{{$setting->youtube_link}}" class="uk-icon-button uk-margin-small-right"><i class="fa-brands fa-youtube"></i></a>

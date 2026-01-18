@@ -11,7 +11,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                     <li><span class="uk-secondary">{{ $data->post_type }}</span></li>
                 </ul>
                 <div class="uk-sub-banner-font">
@@ -74,16 +74,16 @@
                             <!--    </div>-->
                             <!--</div>-->
                             <div class="uk-width-1-3@m">
-                               
-                                    
+
+
                                         @foreach($value->images as $image)
                                             <div class="uk-media-280 uk-margin-small-top">
                                                 <img src="{{ $image->file_name ? asset('uploads/medium/'.$image->file_name) : asset('theme-assets/img/mountain/mountain2.jpeg')}}"  class="border" alt="{{ $image->title }}">
                                             </div>
                                         @endforeach
-                                   
-                                  
-                               
+
+
+
                             </div>
                         </div>
                     </div>

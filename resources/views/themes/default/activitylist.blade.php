@@ -11,7 +11,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{url('/')}}" class="uk-white">Home</a></li>
+                    <li><a href="{{url('/')}}" class="uk-white">Accueil</a></li>
                     {{-- <li><span class="uk-secondary">Activity</span></li> --}}
                 </ul>
                 <div class="uk-sub-banner-font">
