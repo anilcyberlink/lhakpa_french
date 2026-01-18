@@ -507,7 +507,7 @@
                     <!-- <li><a href="">Advanced Search</a></li> -->
                         <li class="uk-flex uk-flex-middle">
                             <form class="uk-search uk-search-default" action="{{ route('searchtrip') }}" method="GET" >
-                                <input class="uk-search-input" type="search" name="query" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off">
+                                <input class="uk-search-input" type="search" name="query" id="search-input" placeholder="Recherche" aria-label="Search" autocomplete="off">
 
                                 <button type="submit" class="uk-search-icon-flip" uk-search-icon></button>
 

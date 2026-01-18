@@ -90,20 +90,20 @@ class RegisterController extends Controller
                 'email' => 'required|unique:users,email',
                 'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
             ]);
-    
+
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'roles' => 'user'
             ]);
-    
+
             $user->subscriber()->create([
                 'name' => $user->name,
                 'email' => $user->email,
                 'verified' => 0,
             ]);
-    
+
             $verifyUser = VerifyUser::create([
                 'user_id' => $user->id,
                 'token' => Str::random(20)
@@ -112,14 +112,14 @@ class RegisterController extends Controller
                 return new VerifyMail($verifyUser->token, $user->id, $user->name);
                 // Mail::send(new VerifyMail($verifyUser->token, $user->id, $user->name));
             }
-    
-            Session::flash('success', 'Please verify your email to complete registration process');
-            return redirect()->intended(route('index.front'));  
+
+            Session::flash('success', 'Veuillez vérifier votre adresse e-mail pour finaliser votre inscription.');
+            return redirect()->intended(route('index.front'));
         }else{
-            return back()->with('message','You are a robot');
+            return back()->with('message','Tu es un robot');
         }
     }
-    
+
     private function getCaptcha($secretKey)
     {
         $secret_key = env('SECRET_KEY');

@@ -117,7 +117,7 @@
                 </div>
                 <div class="uk-child-width-1-2 uk-grid-collapse" uk-grid>
                         <a href="{{route('page.booking', $data->uri)}}" class="uk-secondary-bg uk-book-btn">RÉSERVER MAINTENANT</a>
-                        <a href="#modal-inquiry" class="uk-inquiry-btn uk-primary-bg uk-book-btn" uk-toggle>Demandez maintenant</a>
+                        <a href="#modal-inquiry" class="uk-inquiry-btn uk-primary-bg uk-book-btn" uk-toggle>DEMANDEZ MAINTENANT</a>
                 </div>
             </div>
             <!-- banner side bar start -->
