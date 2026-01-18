@@ -11,7 +11,7 @@
       <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
          <div class="uk-width-1-1@m">
             <ul class="uk-breadcrumb">
-               <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+               <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                <li><span class="uk-secondary">{{ $data->post_type }}</span></li>
             </ul>
             <div class="uk-sub-banner-font">
@@ -31,8 +31,8 @@
                 {!! $data->content !!}
             </p>
        </div>
-       
-      
+
+
       @if($documents)
       <div class="uk-child-width-1-2@m uk-child-width-1-3@l uk-grid-small" uk-grid uk-lightbox="animation: fade" >
         @foreach($documents->images as $image)

@@ -8,7 +8,7 @@
             <div class="uk-width-3-4@m" id="container">
                 <div id="originalDiv">
                     <ul class="uk-breadcrumb uk-margin-remove-bottom">
-                        <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                        <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                         <li><span class="uk-secondary">{{ ucfirst($item->activity_parent) }}</span></li>
                     </ul>
                     <div class="uk-sub-banner-font">
@@ -101,17 +101,17 @@
         <div class="uk-container">
             <div uk-grid>
                 @include('themes.default.common.sidebar-search')
-                
+
                 <div class="uk-width-3-4@m" id="tripsearchResult">
                     <!--  -->
                     <div class="uk-grid">
-                    
+
                     @foreach ($data as $row)
                     <div class="uk-width-1-1 ">
                         <div class="uk-margin-bottom">
                             <div class=" uk-flex-middle uk-grid-match uk-grid-collapse" uk-height-match uk-grid>
                                 <div class="uk-width-2-5@s">
-                                    <div class="uk-display-block uk-inline-clip uk-transition-toggle uk-link-toggle ur-media-270r">                          
+                                    <div class="uk-display-block uk-inline-clip uk-transition-toggle uk-link-toggle ur-media-270r">
                                         <img src="{{!empty($row->thumbnail) ? asset('uploads/original/'.$row->thumbnail) : asset('theme-assets/img/mountain/mountain9.jpeg')}}" class="uk-height-1-1 uk-transition-scale-up uk-transition-opaque" alt="{{$row->trip_title}}">
                                     </div>
                                 </div>

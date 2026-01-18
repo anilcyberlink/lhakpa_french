@@ -11,7 +11,7 @@
                 <div class="uk-width-3-4@m" id="container">
                     <div id="originalDiv">
                         <ul class="uk-breadcrumb">
-                            <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                            <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                         </ul>
                         <div class="uk-sub-banner-font">
                             <h1>Search Results of <em>{{ $query }}</em></h1>
@@ -27,7 +27,7 @@
         <div class="uk-container">
             <div uk-grid>
                 <div class="uk-width-1-4@m">
-                    <div class="uk-sidebar uk-grey-bg uk-padding-small " uk-sticky="offset: 90; end: !" style="border-top: 5px solid var(--primary);"> 
+                    <div class="uk-sidebar uk-grey-bg uk-padding-small " uk-sticky="offset: 90; end: !" style="border-top: 5px solid var(--primary);">
                         <div class="uk-title-font">
                             <span class="uk-white  dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>Search Results</span>
                         </div>
@@ -46,7 +46,7 @@
                             <div class="uk-margin-bottom">
                                 <div class=" uk-flex-middle uk-grid-match uk-grid-collapse" uk-height-match uk-grid>
                                     <div class="uk-width-2-5@s">
-                                        <div class="uk-display-block uk-inline-clip uk-transition-toggle uk-link-toggle ur-media-270r">                          
+                                        <div class="uk-display-block uk-inline-clip uk-transition-toggle uk-link-toggle ur-media-270r">
                                             <img src="{{!empty($row->thumbnail) ? asset('uploads/original/'.$row->thumbnail) : asset('theme-assets/img/mountain/mountain9.jpeg')}}" class="uk-height-1-1 uk-transition-scale-up uk-transition-opaque" alt="{{$row->trip_title}}">
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                                 @if($row->price)
                                                 <h2 class="uk-margin-remove uk-text-left uk-text-right@m" style="font-size:20px;">US ${{$row->price}}</h2>
                                                 @endif
-                                                
+
                                                 @if($row->price_euro)
                                                 <h3 class="uk-margin-remove uk-secondary uk-text-left uk-text-right@m" style="font-size:20px;"> € {{$row->price_euro}}</h3>
                                                 @endif
@@ -103,7 +103,7 @@
                                                     <p class="uk-trip-title uk-margin-remove">Difficulty</p>
                                                     <p class="uk-trip-description uk-margin-remove">{{$row->trip_grade}}</p>
                                                 </div>
-                                            </div> 
+                                            </div>
                                             </div>
                                             <div  class="uk-width-auto@l uk-flex uk-flex-between" style="align-items: baseline; margin-top:11px;">
                                                 <div>

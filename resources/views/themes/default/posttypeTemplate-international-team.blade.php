@@ -11,7 +11,7 @@
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <ul class="uk-breadcrumb">
-                    <li><a href="{{ url('/') }}" class="uk-white">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="uk-white">Accueil</a></li>
                     <li><span class="uk-secondary">{{ $data->post_type }}</span></li>
                 </ul>
                 <div class="uk-sub-banner-font">
@@ -28,7 +28,7 @@
             @foreach ($posts as $row)
                 <li>
                     <a href="#" class="green-border uk-flex uk-flex-between uk-margin-small-top">
-                        {{$row->post_title}} 
+                        {{$row->post_title}}
                         <!--<img src="https://cyberlinknepal.com/design/lhakpa/assets/img/flag2.jpg" class="uk-margin-small-left" style="height: 22px;" alt="">-->
                         <img src="{{$row->page_thumbnail ? asset('uploads/medium/'.$row->page_thumbnail) : asset('theme-assets/img/flag2.jpg') }}" class="uk-margin-small-left" style="height: 22px;" alt="">
                     </a>
