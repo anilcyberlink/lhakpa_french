@@ -55,8 +55,8 @@ class LoginController extends Controller
         }
          return redirect()->intended('adminisclient')->with('status', 'Invalid Username, Password or PIN!');
         }else{
-            return redirect('adminisclient')->with('status', 'You are Robot!');
-        } 
+            return redirect('adminisclient')->with('status', 'Tu es un robot!');
+        }
     }
 
 
@@ -64,20 +64,20 @@ class LoginController extends Controller
         $secret_key = env('SECRET_KEY');
         $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response={$secretKey}");
         $result = json_decode($response);
-        return $result; 
+        return $result;
     }
 
-    public function login_user(Request $request)  
+    public function login_user(Request $request)
     {
-        if ($request->isMethod('post')) {   
+        if ($request->isMethod('post')) {
             $request->validate([
                 'email' => 'required',
-                'password' => 'required'  
+                'password' => 'required'
             ]);
             $email = $request->email;
             $password = $request->password;
 
-            $remember = $request->has('remember') ? true : false;  
+            $remember = $request->has('remember') ? true : false;
             // if($remember==false)
             // {
             //     return back()->with('error',"Please check remember me!");
@@ -89,27 +89,27 @@ class LoginController extends Controller
                         $tripUri = session('intended_trip');
                         session()->forget('intended_trip');
                         session()->forget('needLogin');
-                    
+
                         $tripUrl = url('page/' . tripurl($tripUri));
-                    
-                        return redirect($tripUrl)->with('success', 'Logged in successfully');
+
+                        return redirect($tripUrl)->with('success', 'Connecté avec succès');
                     }
                     session()->forget('needLogin');
                     return redirect()->route('user-profile')->with('success', 'Logged in');
                 }
                 if (Auth::user()->verified == '0') {
                     Auth::logout();
-                    return back()->with('error', 'Please verify first');
+                    return back()->with('error', 'Veuillez d`abord vérifier');
                 }
             } else {
-                return back()->with('error', 'No account found with this email!'); 
+                return back()->with('error', 'Aucun compte associé à cette adresse e-mail.!');
             }
         }
     }
 
     public function user_profile()
     {
-        return view('themes.default.user.profile');  
+        return view('themes.default.user.profile');
     }
 
     public function logout()

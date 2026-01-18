@@ -407,13 +407,13 @@ class FrontpageController extends Controller
                         Mail::send(new BookTrip($request->email));
                     }
                     $name = $request->full_name;
-                    $message = "<p>Thank you for your booking request. One of our team will be in touch soon to confirm details.</p>
-                    <p>We’re looking forward to welcoming you to Lhakpa Trekking!</p>";
+                    $message = "<p>Merci pour votre demande de réservation. Un membre de notre équipe vous contactera prochainement pour confirmer les détails.</p>
+                    <p>Nous avons hâte de vous accueillir pour le trek de Lhakpa !</p>";
                     return view('themes.default.booking-success', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
     }
     // public function updateStatus($id)
@@ -471,13 +471,13 @@ class FrontpageController extends Controller
                         Mail::send(new AdminInquiryMail());
                     }
                     $name = $request->name;
-                    $message = "<p>Thank you for your enquiry. One of our team will be in touch soon to discuss your interests and how we can help with your plans.</p>";
+                    $message = "<p>Merci de votre demande. Un membre de notre équipe vous contactera prochainement pour discuter de vos besoins et de la manière dont nous pouvons vous accompagner dans vos projets.</p>";
 
                     return view('themes.default.contact-success', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
         }
 
@@ -519,13 +519,12 @@ class FrontpageController extends Controller
                         Mail::send(new BookTrip($request->email));
                     }
                     $name = $request->name;
-                    $message = "<p>Thanks for your inquiry. One of our team will be in touch soon to confirm details.</p>
-                    <p>We’re looking forward to welcoming you to Lhakpa Trekking!</p>";
+                    $message = "<p>Merci pour votre demande. Un membre de notre équipe vous contactera prochainement pour confirmer les détails</p> <p>Nous avons hâte de vous accueillir pour le trek de Lhakpa.!</p>";
                     return view('themes.default.inquiry', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
 
     }
@@ -572,13 +571,13 @@ class FrontpageController extends Controller
                     }
                     $trip='';
                     $name = $request->cname;
-                    $message = "<p>Thanks for your collaborating with Lhakpa Trekking!. One of our team will be in touch soon to confirm details.</p>
-                    <p>We’re looking forward to welcoming you to Lhakpa Trekking!</p>";
+                    $message = "<p>Merci de votre collaboration avec Lhakpa Trekking ! Un membre de notre équipe vous contactera prochainement pour confirmer les détails.</p>
+                    <p>Nous avons hâte de vous accueillir à Lhakpa Trekking !</p>";
                     return view('themes.default.inquiry', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
 
     }
@@ -670,10 +669,10 @@ class FrontpageController extends Controller
                 'heard_about_other' => $validated['heard_about_other'] ?? null,
             ]);
 
-            return redirect()->back()->with('success', 'Thank you for your feedback!');
+            return redirect()->back()->with('success', 'Merci pour vos commentaires !');
 
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
     }
     public function subscribe(Request $request)
@@ -731,12 +730,12 @@ class FrontpageController extends Controller
                 $verifyUser->users->verified = 1;
                 $verifyUser->users->save();
                 $user->subscriber()->update(['verified' => 1]); // update the verified field in the subscriber table
-                $status = "Your e-mail is verified. You can now login.";
+                $status = "Votre adresse e-mail est vérifiée. Vous pouvez maintenant vous connecter.";
             } else {
-                $status = "Your e-mail is already verified. You can now login.";
+                $status = "Votre adresse e-mail est déjà vérifiée. Vous pouvez maintenant vous connecter.";
             }
         } else {
-            return redirect()->intended(url('/'))->with('warning', "Sorry your email cannot be identified.");
+            return redirect()->intended(url('/'))->with('warning', "Désolé, votre adresse e-mail n'a pas pu être identifiée.");
         }
 
         return redirect()->intended(url('/'))->with('success', $status);
@@ -774,11 +773,11 @@ class FrontpageController extends Controller
                     Mail::send(new \App\Mail\AdminContactMail($request->email));
                 }
                 $name = $request->full_name;
-                $message = "<p>Thank you for contacting us. One of our team member will be in touch with you soon.</p>";
+                $message = "<p>Merci de nous avoir contactés. Un membre de notre équipe vous contactera prochainement.</p>";
                 return view('themes.default.contact-success', compact('message', 'name'));
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
     }
 
@@ -792,12 +791,12 @@ class FrontpageController extends Controller
             if (!$user->verified) {
                 $verifyUser->users->verified = 1;
                 $verifyUser->users->save();
-                $status = "Your e-mail is verified. You can now login.";
+                $status = "Votre adresse e-mail est vérifiée. Vous pouvez maintenant vous connecter.";
             } else {
-                $status = "Your e-mail is already verified. You can now login.";
+                $status = "Votre adresse e-mail est déjà vérifiée. Vous pouvez maintenant vous connecter.";
             }
         } else {
-            return redirect()->intended(url('/'))->with('warning', "Sorry your email cannot be identified.");
+            return redirect()->intended(url('/'))->with('warning', "Désolé, votre adresse e-mail n'a pas pu être identifiée.");
         }
 
         return redirect()->intended(url('/'))->with('success', $status);
@@ -834,13 +833,13 @@ class FrontpageController extends Controller
                     // Mail::send(new \App\Mail\Contact($request->email));
                     $trip='';
                     $name = $request->full_name;
-                    $message = "<p>Thanks for your enquiry. One of our team will be in touch soon to discuss your interests and how we can help with your plans.</p>";
+                    $message = "<p>Merci de votre demande. Un membre de notre équipe vous contactera prochainement pour discuter de vos besoins et de la manière dont nous pouvons vous accompagner dans vos projets.</p>";
 
                     return view('themes.default.booking-success', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('message', 'You are a robot');
+            return back()->with('message', 'Tu es un robot');
         }
     }
 
@@ -870,7 +869,7 @@ class FrontpageController extends Controller
             if ($film->save()) {
                 // return new \App\Mail\AdminFilmMakingMail($request->email);
                 // Mail::send(new \App\Mail\Contact($request->email));
-                return back()->with('message', 'Form submitted successfully');
+                return back()->with('message', 'Formulaire soumis avec succès');
             }
         }
     }
@@ -881,7 +880,7 @@ class FrontpageController extends Controller
         // dd($query->get(), $request->all());
 
         if (!$query) {
-            return response()->json(['error' => 'Activity not found'], 404);
+            return response()->json(['error' => 'Activité introuvable'], 404);
         }
 
         if ($request->trek_grade != 0) {
@@ -917,7 +916,7 @@ class FrontpageController extends Controller
         }
 
         if (!$query) {
-            return redirect()->back()->with('error', 'Please enter text to search.');
+            return redirect()->back()->with('error', 'Veuillez saisir du texte à rechercher.');
         }
 
         $searchQuery = TripModel::where('trip_title', 'like', "%{$query}%")->orWhere('sub_title', 'like', "%{$query}%");
@@ -1002,7 +1001,7 @@ class FrontpageController extends Controller
         else{
             session(['intended_trip' => $uri]);
             session()->forget('needLogin');
-            return redirect()->route('login.form')->with('error','Please login first');
+            return redirect()->route('login.form')->with('error','Veuillez d`abord vous connecter');
         }
 
     }
@@ -1064,13 +1063,13 @@ class FrontpageController extends Controller
                         Mail::to('lhakpatrekking@gmail.com')->send(new AdminCustomizeTrip($request));
                     }
                     $name = $request->fname;
-                    $message = "<p>Thank you for your booking. One of our team member will be in touch soon to confirm details.</p>
-                    <p>We’re looking forward to welcoming you to Lhakpa Trekking!</p>";
+                    $message = "<p>Merci pour votre réservation. Un membre de notre équipe vous contactera prochainement pour confirmer les détails.</p>
+                    <p>Nous avons hâte de vous accueillir pour le trek de Lhakpa.!</p>";
                     return view('themes.default.booking-success', compact('name', 'message','trip'));
                 }
             }
         } else {
-            return back()->with('error', 'You are a robot');
+            return back()->with('error', 'Tu es un robot');
         }
 
     }
@@ -1193,14 +1192,14 @@ class FrontpageController extends Controller
                 // $data=$request->all();
                 $create=TripReview::create($data);
 
-                return redirect()->back()->with('success','Review posted successfully');
+                return redirect()->back()->with('success','Avis posté avec succès');
             }
             catch(\Exception $e){
                 return redirect()->back()->with('error', $e->getMessage());
             }
         }
         else{
-            return redirect()->route('login.form')->with('error','Please login first');
+            return redirect()->route('login.form')->with('error','Veuillez d`abord vous connecter');
         }
     }
 
@@ -1229,10 +1228,10 @@ class FrontpageController extends Controller
 
                 // return new ResetPasswordMail($data);
                 Mail::to($user->email)->send(new ResetPasswordMail($data));
-                return redirect()->route('index.front')->with('success', 'Please check your email to reset password.');
+                return redirect()->route('index.front')->with('success', 'Veuillez consulter votre messagerie pour réinitialiser votre mot de passe.');
             }
             else{
-                return redirect()->back()->with('error', 'Email not found. Please enter a valid email.');
+                return redirect()->back()->with('error', 'Adresse électronique introuvable. Veuillez saisir une adresse électronique valide.');
             }
         }
         catch(\Exception $e){
@@ -1260,7 +1259,7 @@ class FrontpageController extends Controller
             $reset = PasswordReset::where('email', $request->email)->where('token', $request->token)->first();
 
             if (!$reset || now()->diffInMinutes($reset->created_at) > 5) {
-                return back()->with(['error' => 'Invalid or expired token']);
+                return back()->with(['error' => 'Jeton invalide ou expiré']);
             }
 
             $user = User::where('email', $request->email)->first();
@@ -1269,7 +1268,7 @@ class FrontpageController extends Controller
 
             PasswordReset::where('email', $request->email)->delete();
 
-            return redirect()->route('login.form')->with('success', 'Password reset successfully!');
+            return redirect()->route('login.form')->with('success', 'Réinitialisation du mot de passe avec succès!');
         }
         catch(\Exception $e){
             return redirect()->back()->with('error', $e->getMessage());
