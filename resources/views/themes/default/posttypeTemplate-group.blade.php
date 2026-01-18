@@ -43,18 +43,18 @@
         <div class="uk-container">
             <h2 class="uk-primary uk-margin-remove">{{$data->associated_title}}</h3>
             <span class="dotted-line-black"></span>
-            <p>{{$data->content}}</p>
+            <p>{!! $data->content !!}</p>
             <div class=" border border uk-box-shadow-large">
                 <form action="{{ route('customize-trip.post') }}" method="POST" class="uk-padding">
                     @csrf
                     <input type="hidden" id="g_recaptcha_response" name="g_recaptcha_response"/>
-                    <h3 class="uk-secondary uk-margin-remove">Trip Information</h3>
+                    <h3 class="uk-secondary uk-margin-remove">Informations sur le voyage</h3>
                     <div class=" uk-child-width-1-2@m uk-grid">
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="pname">Package Name*</label>
+                            <label class="uk-form-label uk-text-bold" for="pname">Nom du paquet*</label>
                             <div class="uk-form-controls">
                                 <select class="uk-select" aria-label="Select" name="trip_id" id="trip_id" required>
-                                    <option value="" selected disabled>Select Trip</option>
+                                    <option value="" selected disabled>Sélectionnez le voyage</option>
                                     @foreach ($trips as $trip)
                                         <option value="{{$trip->id}}">{{$trip->trip_title}}</option>
                                     @endforeach
@@ -62,10 +62,10 @@
                             </div>
                         </div>
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="pname">Travlling Style Type*</label>
+                            <label class="uk-form-label uk-text-bold" for="pname">Type de style de voyage*</label>
                             <div class="uk-form-controls">
                                 <select class="uk-select" aria-label="Select" name="travel_type" id="travel_type" required>
-                                    <option value="" selected disabled>Select Type</option>
+                                    <option value="" selected disabled>Sélectionnez le type</option>
                                     @foreach ($travels as $trip)
                                         <option value="{{$trip->id}}">{{$trip->title}}</option>
                                     @endforeach
@@ -73,19 +73,19 @@
                             </div>
                         </div>
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="people">Number of People*</label>
+                            <label class="uk-form-label uk-text-bold" for="people">Nombre de personnes*</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input" id="people" name="people" required type="number">
                             </div>
                         </div>
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="days">Duration*</label>
+                            <label class="uk-form-label uk-text-bold" for="days">Durée*</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input" id="days" name="days" required type="number">
                             </div>
                         </div>
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="date">Trip Start Date*</label>
+                            <label class="uk-form-label uk-text-bold" for="date">Date de début du voyage*</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input" id="date" name="date" required type="date">
                             </div>
@@ -98,10 +98,10 @@
                         </div> --}}
                     </div>
                     <hr>
-                    <h3 class="uk-secondary uk-margin-remove">Personal Information</h3>
+                    <h3 class="uk-secondary uk-margin-remove">Informations personnelles</h3>
                     <div class=" uk-child-width-1-2@m uk-grid">
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="fname">Full Name*</label>
+                            <label class="uk-form-label uk-text-bold" for="fname">Nom et prénom*</label>
                             <div class="uk-form-controls">
                                 <input class="uk-input" id="fname" name="fname" required type="text">
                             </div>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-small-top">
-                            <label class="uk-form-label uk-text-bold" for="fcountry">Country*</label>
+                            <label class="uk-form-label uk-text-bold" for="fcountry">Pays*</label>
                             <select name="country" class="uk-select" id="country" required>
                                 @include('themes.default.common.country')
                             </select>
@@ -126,14 +126,14 @@
                         </div>
                     </div>
                     <div class="uk-margin-small-top">
-                        <label class="uk-form-label uk-text-bold" for="contact">Special Requirement</label>
+                        <label class="uk-form-label uk-text-bold" for="contact">Exigence spéciale</label>
                         <div class="uk-form-controls">
                             <textarea name="message" class="uk-textarea" rows="3" ></textarea>
                         </div>
                     </div>
                     <div class="uk-margin-top uk-text-center">
                         {{-- <a href="" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></a> --}}
-                        <button type="submit" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></button>
+                        <button type="submit" class="uk-btn uk-btn-secondary">Soumettre <span uk-icon="chevron-right"></span></button>
                     </div>
                 </form>
             </div>

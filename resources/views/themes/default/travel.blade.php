@@ -20,7 +20,7 @@
                     <!-- when video is availabe otherwise hiddeb -->
                     <div class="uk-margin-bottom">
                         @if ($item->category_video)
-                            <span class="uk-video">PLAY VIDEO</span>
+                            <span class="uk-video">LIRE LA VIDÉO</span>
                             <a class=" uk-margin-small-left bg-secondary uk-play-button" href="#modal-media-youtube" uk-toggle><i class="fa-solid fa-play"></i></a>
                         @endif
                         <div id="modal-media-youtube" class="uk-flex-top" uk-modal>
@@ -76,7 +76,7 @@
             <div class="uk-width-1-4@m uk-same-height ">
                 <div class="uk-grey-bg  uk-padding-dicovery  uk-pattern-bg responsive-padding">
                      <div class="uk-visible@m">
-                        <h2 class="uk-white uk-text-uppercase">Discovery</h2>
+                        <h2 class="uk-white uk-text-uppercase">Découverte</h2>
                         <hr style="border-color: var(--secondary);">
                     </div>
                     <p class="uk-white uk-text-justify line-five">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="uk-flex uk-text-center">
                         <!-- this button will open the information section -->
-                        <button class="uk-button uk-padding-remove uk-btn uk-btn-secondary uk-width-1-1" id="changeBtn2">Know More</a>
+                        <button class="uk-button uk-padding-remove uk-btn uk-btn-secondary uk-width-1-1" id="changeBtn2">En savoir plus</a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                                     </div>
                                     @if($row->flight == 1)
                                     <div class="uk-margin-small-bottom">
-                                        <p class="uk-margin-remove uk-text-right uk-text-uppercase " style="font-size:15px;"> <i class="fa-solid fa-plane-up uk-margin-small-right"></i> <b>Including flight</b></p>
+                                        <p class="uk-margin-remove uk-text-right uk-text-uppercase " style="font-size:15px;"> <i class="fa-solid fa-plane-up uk-margin-small-right"></i> <b>Vol inclus</b></p>
                                     </div>
                                     @endif
                                     <p class="uk-margin-remove line-three">
@@ -153,21 +153,21 @@
                                             <div class="uk-flex uk-flex-middle uk-trip">
                                                 <i class="fa-solid fa-calendar"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Duration</p>
-                                                    <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Days</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Durée</p>
+                                                    <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Jours</p>
                                                 </div>
                                             </div>
                                             <div class="uk-flex uk-flex-middle uk-trip ">
                                                 <i class="fa-solid fa-location-dot"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Location</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Emplacement</p>
                                                     <p class="uk-trip-description uk-margin-remove">{{getDestinationNameByTripId($row->id)}}</p>
                                                 </div>
                                             </div>
                                             <div class="uk-flex uk-flex-middle uk-trip ">
                                                 <i class="fa-solid fa-calendar"></i>
                                                 <div>
-                                                    <p class="uk-trip-title uk-margin-remove">Difficulty</p>
+                                                    <p class="uk-trip-title uk-margin-remove">Difficulté</p>
                                                     <p class="uk-trip-description uk-margin-remove">{{$row->trip_grade}}</p>
                                                 </div>
                                             </div>
@@ -178,7 +178,7 @@
                                                 <button class="uk-wish-button"id="wish-button" data-id="{{ $row->id }}"><i class="fa-solid fa-heart" aria-hidden="true"></i></button>
                                             </div>
                                             <div >
-                                                <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">Know more</a>
+                                                <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-btn uk-btn-secondary">En savoir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
         </div>
     </section>
 @else
-    <div class="uk-section uk-text-center">{{ ucfirst($item->title) }} Coming Soon... </div>
+    <div class="uk-section uk-text-center">{{ ucfirst($item->title) }} À venir... </div>
 @endif
 <!-- list section end -->
 @stop

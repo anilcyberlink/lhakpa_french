@@ -5,7 +5,7 @@
 @section('thumbnail',$parent->thumbnail)
 @section('content')
 
-<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed" uk-height-viewport data-src="{{ asset('uploads/banners/'.$parent->banner)}} " alt="" uk-img>
+<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed" uk-height-viewport data-src="{{ asset('uploads/banners/'.$parent->banner)}}"  uk-img>
     <div class="uk-overlay-banner uk-position-cover"></div>
     <div class="uk-container uk-width-1-1 pt-150 uk-position-relative">
         <div class="uk-flex uk-flex-middle uk-grid-collapse " uk-grid>
@@ -15,7 +15,7 @@
                     {{-- <li><span class="uk-secondary">Activity</span></li> --}}
                 </ul>
                 <div class="uk-sub-banner-font">
-                    <h1>Activity</h1>
+                    <h1>Activité</h1>
                 </div>
             </div>
         </div>

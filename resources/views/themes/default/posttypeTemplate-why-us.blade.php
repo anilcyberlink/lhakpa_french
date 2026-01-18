@@ -76,11 +76,11 @@
                             <div class="uk-width-1-3@m">
 
 
-                                        @foreach($value->images as $image)
-                                            <div class="uk-media-280 uk-margin-small-top">
-                                                <img src="{{ $image->file_name ? asset('uploads/medium/'.$image->file_name) : asset('theme-assets/img/mountain/mountain2.jpeg')}}"  class="border" alt="{{ $image->title }}">
-                                            </div>
-                                        @endforeach
+                                @foreach($value->images as $image)
+                                    <div class="uk-media-280 uk-margin-small-top">
+                                        <img src="{{ $image->file_name ? asset('uploads/medium/'.$image->file_name) : asset('theme-assets/img/mountain/mountain2.jpeg')}}"  class="border" alt="{{ $image->title }}">
+                                    </div>
+                                @endforeach
 
 
 

@@ -1,8 +1,4 @@
 @extends('themes.default.common.master')
-{{-- @section('title',$parent->title)
-@section('meta_keyword',$parent->title)
-@section('meta_description',$parent->brief)
-@section('thumbnail',$parent->thumbnail) --}}
 @section('content')
 
 <section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed" uk-height-viewport data-src="{{ ($data->count() > 0 ) ? asset('uploads/icon/'.$data[0]->thumbnail) : asset('theme-assets/img/mountain/mountain6.jpeg')}}" alt="" uk-img>
@@ -15,7 +11,7 @@
                     {{-- <li><span class="uk-secondary">Destination</span></li> --}}
                 </ul>
                 <div class="uk-sub-banner-font">
-                    <h1>Expedition</h1>
+                    <h1>Expédition</h1>
                 </div>
             </div>
         </div>

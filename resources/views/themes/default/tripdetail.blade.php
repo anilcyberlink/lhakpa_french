@@ -107,17 +107,17 @@
                         </button>
                         @if ($photo_videos->isNotEmpty())
                             <button id="changeBtn2" class="uk-buttons uk-text-center">
-                                <span class="uk-secondary "><i class="fa-solid fa-video f-20 uk-margin-small-bottom"></i><br>Videos</span>
+                                <span class="uk-secondary "><i class="fa-solid fa-video f-20 uk-margin-small-bottom"></i><br>Vidéos</span>
                             </button>
                         @endif
                         <a href="#review" uk-scroll class="uk-buttons uk-text-center">
-                            <span class="uk-secondary "><i class="fa-solid fa-users f-20 uk-margin-small-bottom "></i><br>Reviews</span>
+                            <span class="uk-secondary "><i class="fa-solid fa-users f-20 uk-margin-small-bottom "></i><br>Avis</span>
                         </a>
                     </div>
                 </div>
                 <div class="uk-child-width-1-2 uk-grid-collapse" uk-grid>
-                        <a href="{{route('page.booking', $data->uri)}}" class="uk-secondary-bg uk-book-btn">BOOK NOW</a>
-                        <a href="#modal-inquiry" class="uk-inquiry-btn uk-primary-bg uk-book-btn" uk-toggle>INQUIRY NOW</a>
+                        <a href="{{route('page.booking', $data->uri)}}" class="uk-secondary-bg uk-book-btn">RÉSERVER MAINTENANT</a>
+                        <a href="#modal-inquiry" class="uk-inquiry-btn uk-primary-bg uk-book-btn" uk-toggle>Demandez maintenant</a>
                 </div>
             </div>
             <!-- banner side bar start -->
@@ -133,11 +133,11 @@
                     <div class="uk-container uk-position-relative uk-flex uk-flex-middle">
                         <ul class="uk-width-2-3 uk-navbar-single uk-flex  uk-margin-remove-bottom sidenav" style="gap: 60px;">
                             <li>
-                                <a href="#features" >Overview </a>
+                                <a href="#features" >Aperçu </a>
                             </li>
                             @if($itinerary->count() > 0)
                                 <li>
-                                    <a href="#itinerary" >Itinerary & Maps </a>
+                                    <a href="#itinerary" >Itinéraire et cartes</a>
                                 </li>
                             @endif
                             @if ($cost_includes->isNotEmpty() || $banner->isNotEmpty() || $cost_excludes->isNotEmpty() || $guidelines->count() > 0)
@@ -151,12 +151,12 @@
                                 </li>
                             @endif
                             <li>
-                                <a href="#review" >Review </a>
+                                <a href="#review" >Revoir </a>
                             </li>
                         </ul>
                         <div class="uk-width-1-3 uk-flex uk-flex-right  uk-visible@m  ">
                             @if ($schedules->count() > 0)
-                                <a href="#offcanvas-usage" class="uk-btn uk-btn-secondary" uk-toggle>Dates & Prices</a>
+                                <a href="#offcanvas-usage" class="uk-btn uk-btn-secondary" uk-toggle>Dates et tarifs</a>
                             @endif
                         </div>
                     </div>
@@ -178,13 +178,13 @@
                                     <h1 class="uk-primary uk-margin-remove">{{$data->route}}</h1>
                                 </div>
                             </div>
-                            
+
                             <div class="uk-width-1-2@s uk-text-right@m uk-text-left uk-margin-top uk-responsive-flex">
-                                
+
                                <div>
                                     @if($data->trip_pdf)
                                         <a href="{{ route('trip.download.pdf', $data->id) }}" class="uk-btn uk-btn-secondary download-pdf-btn uk-visible@s" download>
-                                            <i class="fa-solid fa-download "></i> <span class=" uk-margin-small-left">Download Itinerary</span>
+                                            <i class="fa-solid fa-download "></i> <span class=" uk-margin-small-left">Télécharger l'itinéraire</span>
                                         </a>
                                          <a href="{{ route('trip.download.pdf', $data->id) }}" class="uk-btn uk-btn-secondary download-pdf-btn uk-responsive-btn uk-hidden@s" download uk-tooltip="title: Download Itinerary; pos: bottom-center">
                                             <i class="fa-solid fa-download "></i>
@@ -193,12 +193,12 @@
                                </div>
                                 @if ($data->trip_code)
                                     <div class="uk-margin-top">
-                                        <p><b class="uk-text-uppercase uk-secondary">Ref No: </b>{{$data->trip_code}}</p>
-                                    </div>  
+                                        <p><b class="uk-text-uppercase uk-secondary">Numéro de référence: </b>{{$data->trip_code}}</p>
+                                    </div>
                                 @endif
                             </div>
                         </div>
-                       
+
                         <div class="uk-column-1-1 uk-column-1-2@s">
                         <span class="uk-text-justify">
                             {!!$data->trip_content!!}
@@ -210,7 +210,7 @@
                     <!-- hightlight start-->
                     @if (!empty($data->trip_highlight))
                         <div class="uk-font uk-margin-top">
-                            <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-solid fa-person-hiking uk-margin-small-right" aria-hidden="true"></i>Trip highlight</span>
+                            <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-solid fa-person-hiking uk-margin-small-right" aria-hidden="true"></i>Point culminant du voyage</span>
                             <ul class="uk-list uk-highlight uk-list-divider uk-light-bg uk-padding border uk-responsive-padding">
                                 {!! $data->trip_highlight !!}
                             </ul>
@@ -221,7 +221,7 @@
                     <!-- notice start-->
                     @if (!empty($data->trip_excerpt))
                         <div class="uk-font">
-                            <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-solid fa-list uk-margin-small-right" aria-hidden="true"></i>Important notice</span>
+                            <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-solid fa-list uk-margin-small-right" aria-hidden="true"></i>Avis important</span>
                             <div class=" uk-light-bg uk-padding border uk-margin-top uk-responsive-padding">
                                 <p class="uk-text-justify">
                                     {!! $data->trip_excerpt !!}
@@ -232,16 +232,16 @@
                     <!-- end notice -->
 
                 </div>
-                
+
                 <div id="itinerary">
                     <div class="uk-font uk-margin-top uk-margin-bottom" id="itinerary">
                         @if($itinerary->count() > 0)
                             <div class="uk-flex uk-flex-middle uk-flex-between">
                                 <div class="uk-font uk-text-center">
-                                    <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-regular fa-calendar uk-margin-small-right" aria-hidden="true"></i>Itinerary</span>
+                                    <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-regular fa-calendar uk-margin-small-right" aria-hidden="true"></i>Itinéraire</span>
                                 </div>
                                 <div>
-                                    <p class="uk-margin-remove uk-text-right">Share this: </p>
+                                    <p class="uk-margin-remove uk-text-right">Partagez ceci: </p>
                                     <div class="uk-footer-icon   uk-margin-bottom">
                                         <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
                                     </div>
@@ -255,21 +255,21 @@
                                             <div class="uk-accordion-title  uk-itinerary-title">
                                                 <div class="uk-grid-small uk-flex-middle uk-grid-collapse" uk-grid>
                                                   <div class="uk-width-auto uk-text-center uk-first-column">
-                                                     <div class="uk-day-title uk-margin-small-right"> Day {{ $item->days }} </div>
+                                                     <div class="uk-day-title uk-margin-small-right"> Jour {{ $item->days }} </div>
                                                   </div>
                                                   <div class="uk-width-expand">
                                                      <div class="uk-width-1-1">
                                                         <p class="uk-margin-remove theme-font-medium"> {{ $item->title }} </p>
                                                      </div>
                                                   </div>
-                                               </div>  
+                                               </div>
                                             </div>
                                             <div class="uk-accordion-content uk-margin-remove">
                                                 <p>{!! $item->content !!}</p>
                                             </div>
-                                              
+
                                         </li>
-                                        
+
                                     @endforeach
                                 </ul>
                             </div>
@@ -277,8 +277,8 @@
                         @if(!empty($data->trip_map))
                             <div class="uk-maps uk-margin-large-top" uk-lightbox>
                                 <div class="uk-font uk-text-center uk-margin-top">
-                                    <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-regular fa-calendar uk-margin-small-right" aria-hidden="true"></i>Maps</span>
-                                </div> 
+                                    <span class="uk-primary uk-text-uppercase f-27 "><i class="fa-regular fa-calendar uk-margin-small-right" aria-hidden="true"></i>Cartes</span>
+                                </div>
                                 <a href="{{ asset('uploads/original/'.$data->trip_map)}}" class="uk-media-400">
                                     <img src="{{ asset('uploads/original/'.$data->trip_map)}}" alt="{{$data->trip_title}}"/>
                                 </a>
@@ -287,7 +287,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- sidebar-->
             <div class="uk-width-1-4@l ">
                 <!-- facilities start -->
@@ -297,11 +297,11 @@
                             <div>
                                 <div class="uk-flex uk-flex-column  uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/score.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/score.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Trip Grade</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Note du voyage</strong></p>
                                             <div class="tooltip-container">
                                                 {{ ($data->trip_grade) }}
                                                 @if ($data->status_text)
@@ -318,12 +318,12 @@
                             <div>
                                 <div class="uk-flex uk-flex-column  uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/clock.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/clock.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Duration</strong></p>
-                                            <p class="uk-margin-remove">{{ $data->duration }} Days</p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Durée</strong></p>
+                                            <p class="uk-margin-remove">{{ $data->duration }} Jours</p>
                                         </div>
                                     </div>
                                 </div>
@@ -331,11 +331,11 @@
                             <div>
                                 <div class="uk-flex uk-flex-column  uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/altitude.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/altitude.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Max Elevation</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Altitude maximale</strong></p>
                                             <p class="uk-margin-remove">{{ $data->max_altitude }}</p>
                                         </div>
                                     </div>
@@ -344,11 +344,11 @@
                             <div>
                                 <div class="uk-flex  uk-flex-column uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/group.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/group.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Group Size</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Taille du groupe</strong></p>
                                             <p class="uk-margin-remove">{{ $data->group_size }}</p>
                                         </div>
                                     </div>
@@ -357,11 +357,11 @@
                             <div>
                                 <div class="uk-flex  uk-flex-column uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/bus.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/bus.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Transporation</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Transport</strong></p>
                                             <p class="uk-margin-remove">{{$data->peak_name}}</p>
                                         </div>
                                     </div>
@@ -370,11 +370,11 @@
                             <div>
                                 <div class="uk-flex  uk-flex-column uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/point.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/point.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div>
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Start / End</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Début / Fin</strong></p>
                                             <p class="uk-margin-remove">{{ $data->best_season }}</p>
                                         </div>
                                     </div>
@@ -383,11 +383,11 @@
                             <div>
                                 <div class="uk-flex  uk-flex-column uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/hotel.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/hotel.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Accommodation</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Hébergement</strong></p>
                                             <p class="uk-margin-remove">{{ $data->accommodation }}</p>
                                         </div>
                                     </div>
@@ -396,11 +396,11 @@
                             <div>
                                 <div class="uk-flex  uk-flex-column uk-flex-center uk-text-center uk-margin-top">
                                     <div class="uk-width-auto">
-                                        <img src="{{asset('theme-assets/img/icon/guided.png')}}" class="subnav-icon" alt="">
+                                        <img src="{{asset('theme-assets/img/icon/guided.png')}}" class="subnav-icon" >
                                     </div>
                                     <div>
                                         <div class="uk-feature-font">
-                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Guided</strong></p>
+                                            <p class="uk-margin-remove"><strong style="font-size: 14px !important;">Guidé</strong></p>
                                             <p class="uk-margin-remove">{{ $data->guided == 1 ? 'Yes' : 'No' }}</p>
                                         </div>
                                     </div>
@@ -410,12 +410,12 @@
                     </div>
                     <div>
                         <div class="uk-flex">
-                            <a href="#modal-customize" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top " uk-toggle>Customize Your Trip</a>
+                            <a href="#modal-customize" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top " uk-toggle>Personnalisez votre voyage</a>
                         </div>
                         @if ($schedules->count() > 0)
-                        <div class="uk-flex">  
-                                <a href="#offcanvas-usage" class=" uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top" uk-toggle>View Dates and prices</a>
-                        </div>   
+                        <div class="uk-flex">
+                                <a href="#offcanvas-usage" class=" uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top" uk-toggle>Dates et tarifs</a>
+                        </div>
                     </div>
                     @endif
                 </div>
@@ -423,7 +423,7 @@
                 @if($experts->count() > 0)
                     <div>
                         <div class="uk-light-bg border uk-padding-small uk-margin-top">
-                            <h2 class="uk-primary uk-text-uppercase uk-margin-remove" style="font-size: 24px;">Consult with Experts</h2>
+                            <h2 class="uk-primary uk-text-uppercase uk-margin-remove" style="font-size: 24px;">Consultez des experts</h2>
                             <div uk-slider="autoplay: true">
                                 <div class="uk-position-relative uk-visible-toggle" tabindex="-1" >
                                     <div class="uk-slider-items uk-child-width-1-1">
@@ -431,11 +431,11 @@
                                             <div>
                                                 @foreach ($group as $expert)
                                                     <div class="uk-flex uk-flex-middle uk-margin-small-top">
-                                                        <img src="{{ !empty($expert->thumbnail) ? asset('uploads/team/' .$expert->thumbnail) : asset('theme-assets/img/mountain/mountain1.jpeg')}}" class="uk-sherpa-img" alt="">
+                                                        <img src="{{ !empty($expert->thumbnail) ? asset('uploads/team/' .$expert->thumbnail) : asset('theme-assets/img/mountain/mountain1.jpeg')}}" class="uk-sherpa-img" >
                                                         <div class="uk-sherpa-font">
                                                             <h2>{{ $expert->name }}</h2>
                                                             <span>{{ $expert->position }}</span>
-                                                            <span><b> Languages:</b> {{ $expert->language }}</span>
+                                                            <span><b> Langues:</b> {{ $expert->language }}</span>
                                                             <!--<div>-->
                                                             <!--    <b> Languages:</b> {{ $expert->language }}-->
                                                                 <!--<i class="fa-brands fa-whatsapp uk-whatsapp"></i>-->
@@ -452,17 +452,17 @@
                                 <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
                             </div>
                             <div class="uk-flex">
-                                <a href="https://lhakpatrekking.com/type-team-members" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">View All Team Members</a>
+                                <a href="https://lhakpatrekking.com/type-team-members" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
                             </div>
-                            
+
                         </div>
                     </div>
                 @endif
                     <div class="uk-flex">
-                        <a href="https://lhakpatrekking.com/type-suggestion" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Message from director</a>
+                        <a href="https://lhakpatrekking.com/type-suggestion" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Message du directeur</a>
                     </div>
                     <div class="uk-light-bg uk-padding-small uk-margin-top">
-                        <div class=" text-secondary-light uk-text-bold">Need Help with this booking:</div>
+                        <div class=" text-secondary-light uk-text-bold">Besoin d'aide:</div>
                         <div class="uk-margin-small-top">
                             <div class="uk-footer-icon uk-flex uk-flex-between">
                                 <!--<a href="https://www.instagram.com" class="uk-icon-button "><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>-->
@@ -491,7 +491,7 @@
                     </div>
                     <div uk-sticky="offset: 150; end: #my-id; media: @l" style="    z-index: 1;">
                         <div class="uk-light-bg border uk-padding-small uk-margin-top">
-                            <h2 class="uk-primary uk-text-uppercase uk-margin-remove" style="font-size: 24px;">International Team</h2>
+                            <h2 class="uk-primary uk-text-uppercase uk-margin-remove" style="font-size: 24px;">Équipe internationale</h2>
                             <div uk-slider=" autoplay: true">
                                 <div class="uk-position-relative uk-visible-toggle" tabindex="-1" >
                                     <div class="uk-slider-items uk-child-width-1-1">
@@ -508,11 +508,11 @@
                                                           <span>{{ $int_expert->brief }}</span><br>
                                                           <!--<span><b>Country:</b> France</span><br>-->
                                                           @if( $int_expert->language )
-                                                          <span><b> Languages:</b> {{ $int_expert->language }}</span>
+                                                          <span><b> Langues:</b> {{ $int_expert->language }}</span>
                                                           @endif
                                                        </div>
                                                        </div>
-                                                       
+
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -522,14 +522,14 @@
                                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
                             </div>
                             <div class="uk-flex">
-                                <a href="https://lhakpatrekking.com/type-international-team" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">View All Members</a>
+                                <a href="https://lhakpatrekking.com/type-international-team" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
                             </div>
                         </div>
                         <div class="uk-flex">
-                            <a href="https://lhakpatrekking.com/type-terms-conditons" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Terms & Condition</a>
+                            <a href="https://lhakpatrekking.com/type-terms-conditons" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Conditions générales</a>
                         </div>
                         <div class="uk-flex">
-                            <a href="https://lhakpatrekking.com/type-why-us" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Why Lhakpa Trekking?</a>
+                            <a href="https://lhakpatrekking.com/type-why-us" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Pourquoi Lhakpa Trekking?</a>
                         </div>
                     </div>
             </div>
@@ -576,9 +576,9 @@
 <!--                                <div class="uk-accordion-content uk-margin-remove">-->
 <!--                                    <p>{!! $item->content !!}</p>-->
 <!--                                </div>-->
-                                  
+
 <!--                            </li>-->
-                            
+
 <!--                        @endforeach-->
 <!--                    </ul>-->
 <!--                </div>-->
@@ -603,18 +603,18 @@
     <section class="uk-position-relative uk-section  uk-background-norepeat uk-background-cover" uk-parallax="bgx: -100; easing: 1;" data-src="{{asset('theme-assets/img/bg/01.jpg')}}" id="information" uk-img>
         <div class="uk-overlay-pink uk-position-cover"></div>
         <div class="uk-container uk-position-relative">
-            <ul class="uk-subnav uk-subnav-pill uk-why-us-tab uk-flex-center" uk-switcher="animation: uk-animation-fade">           
+            <ul class="uk-subnav uk-subnav-pill uk-why-us-tab uk-flex-center" uk-switcher="animation: uk-animation-fade">
                 @if ($cost_includes->count() > 0)
-                    <li><a href="#" class="green-border">TRIP</a></li>
+                    <li><a href="#" class="green-border">VOYAGE</a></li>
                 @endif
                 @if ($banner->count() > 0)
                     <li><a href="#" class="green-border">Document</a></li>
                 @endif
                 @if ($cost_excludes->count() > 0)
-                    <li><a href="#" class="green-border">Equipment</a></li>
+                    <li><a href="#" class="green-border">Équipement</a></li>
                 @endif
                 @if ($guidelines->count() > 0)
-                    <li><a href="#" class="green-border">Guidelines</a></li>
+                    <li><a href="#" class="green-border">Directives</a></li>
                 @endif
             </ul>
             <div class="uk-switcher uk-margin">
@@ -690,7 +690,7 @@
 <!-- cost includes / excludes section end -->
 
 <!-- faq section -->
-<section class="uk-section uk-section-overlap-top-light" id="faq"> 
+<section class="uk-section uk-section-overlap-top-light" id="faq">
     <div class="uk-container">
         @if ($faqs->count()>0)
             <div class="uk-font uk-text-center">
@@ -720,33 +720,33 @@
         <div class="uk-primary-bg uk-padding uk-padding-left uk-about-text" style="line-break: anywhere;">
             <div class="uk-container uk-flex uk-flex-middle uk-margin-top">
                 <div class="uk-width-1-1">
-                    <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>TRAVEL WITH US</span>
-                    <h1 class="uk-secondary  uk-margin-remove" style="font-size:2rem;">What people say</h1>
+                    <span class="uk-white dotted-line-white"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>VOYAGEZ AVEC NOUS</span>
+                    <h1 class="uk-secondary  uk-margin-remove" style="font-size:2rem;">Ce que disent les gens</h1>
                     <div uk-slider="autoplay : true; autoplay-interval: 6000; pause-on-hover: true; finite: false;">
                         <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
                             <div class="uk-slider-items">
                                 <!-- client detail -->
-                                @foreach ($trip_review as $value)  
-                                    <div class="uk-width-1-1">  
+                                @foreach ($trip_review as $value)
+                                    <div class="uk-width-1-1">
                                         <div class="uk-star-rating">
                                             @for($i=0; $i < $value->rating; $i++)
                                                 <i class="fa-solid fa-star"></i>
                                             @endfor
                                         </div>
-                                        <span class=" uk-contents"> 
-                                             
-                                             <p  id="text" class="message-container uk-margin-top"> 
+                                        <span class=" uk-contents">
+
+                                             <p  id="text" class="message-container uk-margin-top">
                                              {{ $value->message }}
                                              </p>
-                                             <button id="toggleBtn" class="read-more-btn">Read More </button>
+                                             <button id="toggleBtn" class="read-more-btn">En savoir plus </button>
                                               </span>
                                             <div class="uk-flex uk-margin-top">
-                                                <img src="{{$value->image ? asset('uploads/reviews/'.$value->image) : asset('theme-assets/img/user.png')}}" class="uk-testimonial-img" alt="">
+                                                <img src="{{$value->image ? asset('uploads/reviews/'.$value->image) : asset('theme-assets/img/user.png')}}" class="uk-testimonial-img" >
                                                 <div class="uk-title-font">
                                                     <h2 class="uk-secondary">{{ $value->full_name }}</h2>
                                                     <span class="uk-white">{{ $value->country }}</span>
                                                        @if(trip_count($value->user_id) >= 1)
-                                                   <p class="uk-white uk-margin-top"> {{trip_count($value->user_id)}} trip with Lhakpa Treks</p>
+                                                   <p class="uk-white uk-margin-top"> {{trip_count($value->user_id)}} voyage avec Lhakpa Treks</p>
                                                    @endif
                                                 </div>
                                             </div>
@@ -760,10 +760,10 @@
                     </div>
                     <div class="uk-margin-top uk-text-center uk-child-width-1-2@m uk-grid">
                             <div class="" style="padding: 20px 0;">
-                                <a href="#offcanvas-review" class="uk-btn uk-btn-secondary" uk-toggle>Add Review</a>
+                                <a href="#offcanvas-review" class="uk-btn uk-btn-secondary" uk-toggle>Ajouter un avis</a>
                             </div>
                             <div class="" style="padding: 20px 0;">
-                                <a href="{{route('all-review')}}" class="uk-btn uk-btn-primary">View All Review</a>
+                                <a href="{{route('all-review')}}" class="uk-btn uk-btn-primary">Tout Afficher</a>
                             </div>
                     </div>
                 </div>
@@ -779,8 +779,8 @@
     <div class="uk-container">
         <div class="uk-text-center">
             <div class="uk-title-font">
-                <span class="uk-secondary "><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>PACKAGES</span>
-                <h1 class="uk-primary uk-margin-bottom">Related Trips</h1>
+                <span class="uk-secondary "><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>FORFAITS</span>
+                <h1 class="uk-primary uk-margin-bottom">Voyages connexes</h1>
             </div>
         </div>
         <div class="uk-child-width-1-2@m" uk-grid uk-height-match>
@@ -790,7 +790,7 @@
                         <div class=" uk-flex-middle uk-grid-match uk-grid-collapse" uk-height-match uk-grid>
                             <div class="uk-width-2-5@s">
                                 <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-display-block uk-inline-clip uk-transition-toggle uk-link-toggle">
-                                    <img src="{{ !empty($row->thumbnail) ? asset('uploads/original/'.$row->thumbnail) : asset('theme-assets/img/mountain/mountain3.jpeg')}}" class="uk-height-1-1 uk-width-1-1 uk-transition-scale-up uk-transition-opaque uk-trip-image" alt="">
+                                    <img src="{{ !empty($row->thumbnail) ? asset('uploads/original/'.$row->thumbnail) : asset('theme-assets/img/mountain/mountain3.jpeg')}}" class="uk-height-1-1 uk-width-1-1 uk-transition-scale-up uk-transition-opaque uk-trip-image" >
                                 </a>
                             </div>
                             <div class="uk-width-3-5@s uk-light-bg uk-padding-small uk-trip-list" style="padding: 30px 25px;">
@@ -810,21 +810,21 @@
                                     <div class="uk-flex uk-flex-middle uk-trip">
                                         <i class="fa-solid fa-calendar"></i>
                                         <div>
-                                            <p class="uk-trip-title uk-margin-remove">Duration</p>
-                                            <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Days</p>
+                                            <p class="uk-trip-title uk-margin-remove">Durée</p>
+                                            <p class="uk-trip-description uk-margin-remove">{{$row->duration}} Jours</p>
                                         </div>
                                     </div>
                                     <div class="uk-flex uk-flex-middle uk-trip ">
                                         <i class="fa-solid fa-location-dot"></i>
                                         <div>
-                                            <p class="uk-trip-title uk-margin-remove">Location</p>
+                                            <p class="uk-trip-title uk-margin-remove">Emplacement</p>
                                             <p class="uk-trip-description uk-margin-remove">{{ getDestinationNameByTripId($row->id)}}</p>
                                         </div>
                                     </div>
                                     <div class="uk-flex uk-flex-middle uk-trip ">
                                         <i class="fa-solid fa-calendar"></i>
                                         <div>
-                                            <p class="uk-trip-title uk-margin-remove">Difficulty</p>
+                                            <p class="uk-trip-title uk-margin-remove">Difficulté</p>
                                             <p class="uk-trip-description uk-margin-remove">{{ ($row->trip_grade)}}</p>
                                         </div>
                                     </div>
@@ -842,20 +842,20 @@
 <!-- new element added -->
 
 <!-- review form modal start -->
- 
-<div id="offcanvas-review" uk-modal> 
+
+<div id="offcanvas-review" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-padding-remove-top uk-padding-remove-left uk-padding-remove-right uk-padding-bottom">
         <div class="uk-padding uk-padding-remove-bottom">
-            <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove uk-primary-bg border">write a review</h3>
+            <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove uk-primary-bg border">écrire une critique</h3>
             <button class="uk-modal-close-default" type="button" uk-close></button>
             <form class="uk-contact-form" action="{{ route('review.create') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="trip_id" value="{{ $data->id }}">
                 <div class=" uk-child-width-1-2@m uk-grid">
                     <div class="uk-margin-small-top">
-                        <label class="uk-form-label uk-text-bold" for="full_name">Full Name</label>
+                        <label class="uk-form-label uk-text-bold" for="full_name">Nom et prénom</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="fullname" name="full_name" value="{{ Auth::check() ? Auth::user()->name : '' }}" required type="text">  
+                            <input class="uk-input" id="fullname" name="full_name" value="{{ Auth::check() ? Auth::user()->name : '' }}" required type="text">
                         </div>
                     </div>
                     <div class="uk-margin-small-top">
@@ -871,7 +871,7 @@
                         </div>
                     </div>
                     <div class="uk-margin-small-top">
-                        <label class="uk-form-label uk-text-bold" for="">Rating</label>
+                        <label class="uk-form-label uk-text-bold" for="">Notation</label>
                         <div class="star-rating">
                             <input type="radio" id="5-stars" name="rating" value="5">
                             <label for="5-stars" class="star">&#9733;</label>
@@ -887,7 +887,7 @@
                     </div>
                 </div>
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="country">Country</label>
+                    <label class="uk-form-label uk-text-bold" for="country">Pays</label>
                     <div class="uk-form-controls">
                         <select name="country" class="uk-select border" id="country" required>
                                 @include('themes.default.common.country')
@@ -901,9 +901,9 @@
                     </div>
                 </div>
                 <div class="uk-margin-top uk-text-center">
-                    <button type="submit" class="uk-btn uk-btn-secondary">Submit</button>
+                    <button type="submit" class="uk-btn uk-btn-secondary">Soumettre</button>
                 </div>
-            </form> 
+            </form>
         </div>
     </div>
 </div>
@@ -915,7 +915,7 @@
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         <div class=" uk-padding uk-res-padding ">
             <h3 class="text-secondary uk-margin-remove uk-text-center uk-primary-bg border">
-                Dates & Prices
+                Dates et tarifs
             </h3>
         </div>
         <div class="uk-padding uk-res-padding uk-padding-remove-top">
@@ -924,9 +924,9 @@
                 <!-- Table Header -->
                 <div class=" uk-grid-small uk-child-width-1-6 uk-text-bold uk-background-muted uk-margin-top uk-margin-remove-left uk-padding-small uk-visible@m" uk-grid>
                     <div class="uk-padding-remove">Dates</div>
-                    <div class="uk-padding-remove">With Meal</div>
-                    <div class="uk-padding-remove">Without Meal</div>
-                    <div class="uk-padding-remove">Status</div>
+                    <div class="uk-padding-remove">Avec repas</div>
+                    <div class="uk-padding-remove">Sans repas</div>
+                    <div class="uk-padding-remove">Statut</div>
                     <div class="uk-padding-remove"></div>
                     <div class="uk-padding-remove"></div>
                 </div>
@@ -939,21 +939,21 @@
                                     <span class="uk-block uk-hidden@m">Dates: </span>{{ date('d M, Y', strtotime($item->start_date)) }} – <br class="uk-visible@s"> {{ date('d M, Y', strtotime($item->end_date)) }}
                                 </div>
                                 <div class="uk-black uk-flex">
-                                    <span class="uk-block uk-hidden@m">With Meal: </span>
+                                    <span class="uk-block uk-hidden@m">Avec repas: </span>
                                     <div class="custom-flex">
                                         @if($item->old_price1)
                                             <span style="color: #b50000; text-decoration: line-through; margin-right:5px;">US ${{$item->old_price1}}</span>
                                         @endif
-                                        
+
                                         @if($item->price)
                                             <span>US ${{$item->price}}</span>
                                         @else
-                                            <span>Not Available</span>
+                                            <span>Pas disponible</span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="uk-black uk-flex">
-                                    <span class="uk-block uk-hidden@m">Without Meal: </span>
+                                    <span class="uk-block uk-hidden@m">Sans repas: </span>
                                     <div class="custom-flex">
                                         @if($item->old_price2)
                                             <span style="color: #b50000; text-decoration: line-through; margin-right:5px;">US ${{$item->old_price2}}</span>
@@ -961,20 +961,24 @@
                                         @if($item->group_size)
                                             <span>US ${{$item->group_size}}</span>
                                         @else
-                                            <span>Not Available</span>
+                                            <span>Pas disponible</span>
                                         @endif
                                     </div>
                                 </div>
                                 @if($item->availability === 'AVAILABLE')
                                     <div class="uk-text-success">
+                                        <span class="uk-block uk-hidden@m">Statut: </span>DISPONIBLE
                                 @elseif($item->availability === 'LIMITED')
                                     <div class="uk-text-warning">
+                                        <span class="uk-block uk-hidden@m">Statut: </span>LIMITÉ
                                 @elseif($item->availability === 'CLOSED')
                                     <div class="uk-text-danger">
+                                        <span class="uk-block uk-hidden@m">Statut: </span>FERMÉ
                                 @else
                                     <div class="uk-primary">
+                                        <span class="uk-block uk-hidden@m">Statut: </span>GARANTI
                                 @endif
-                                    <span class="uk-block uk-hidden@m">Status: </span>{{$item->availability}}
+
                                 </div>
                                 <div class="uk-black">
                                     @if($item->availability != 'CLOSED')
@@ -982,17 +986,17 @@
                                     <form action="{{ route('page.booking', $data->uri) }}" method="post" id="form-{{ $item->id }}">
                                         @csrf
                                         <input type="hidden" name="schedule_id" id="schedule_id{{ $item->id }}" value="{{ $item->id }}">
-                                        <button type="button" onclick="document.getElementById('form-{{ $item->id }}').submit();" class="uk-btn uk-btn-secondary">Book Now</button>
+                                        <button type="button" onclick="document.getElementById('form-{{ $item->id }}').submit();" class="uk-btn uk-btn-secondary">Réservez maintenant</button>
                                     </form>
                                     @endif
                                 </div>
                                 <div class="trigger" data-target="#sidebar{{ $item->id }}">
-                                    <span class="pointer">View Info</span>
+                                    <span class="pointer">Détails</span>
                                 </div>
                             </div>
                             @if($item->remarks )
                                 <div class="sidebar" id="sidebar{{ $item->id }}" hidden>
-                                    <h3 class="uk-secondary uk-margin-top">Highlights at a Glance</h3>
+                                    <h3 class="uk-secondary uk-margin-top">Points saillants en bref</h3>
                                     {!! $item->remarks !!}
                                 </div>
                             @endif
@@ -1014,7 +1018,7 @@
 <!-- inquiry form modal start-->
 <div id="modal-inquiry" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-        <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove  uk-primary-bg border">Have Questions?</h3>
+        <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove  uk-primary-bg border">Vous avez des questions?</h3>
         <h3 class="uk-text-center uk-margin-remove">{{ $data->trip_title }}</h3>
         <button class="uk-modal-close-default" type="button" uk-close></button>
 
@@ -1024,7 +1028,7 @@
                 <input type="hidden" id="g_recaptcha_response" name="g_recaptcha_response"/>
                 <input type="hidden" name="trip_id" value="{{$data->id}}" />
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="name">Full Name*</label>
+                    <label class="uk-form-label uk-text-bold" for="name">Nom et prénom*</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" id="name" name="name" required type="text">
                     </div>
@@ -1035,10 +1039,10 @@
                         <input class="uk-input" id="emailid" name="emailid" required type="email">
                     </div>
                 </div>
-         
+
             <!-- new element added -->
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="country">Country*</label>
+                    <label class="uk-form-label uk-text-bold" for="country">Pays*</label>
                     <select name="country" class="uk-select" id="country" required>
                         @include('themes.default.common.country')
                     </select>
@@ -1053,12 +1057,12 @@
                                @if($data->latest_info)
                 <!-- new element added -->
                 <div class="uk-flex uk-flex-middle uk-margin-top">
-                    <p class="uk-margin-remove">To know more about our latest trip information:</p>
-                    <button class="uk-button uk-button-default uk-info-button" type="button" uk-toggle="target: .toggle">View Info</button>
+                    <p class="uk-margin-remove">Pour en savoir plus sur nos dernières informations de voyage:</p>
+                    <button class="uk-button uk-button-default uk-info-button" type="button" uk-toggle="target: .toggle">Voir le détail</button>
                 </div>
                 <p class="toggle"></p>
                 <div class="toggle" hidden>
-                    <h3 class="uk-secondary uk-margin-top">More Information</h3>
+                    <h3 class="uk-secondary uk-margin-top">Plus d'informations</h3>
                     <div class=" uk-padding uk-light-bg border uk-margin-remove ">{!! $data->latest_info !!}</div>
                 </div>
             @endif
@@ -1070,7 +1074,7 @@
             </div>
             <div class="uk-margin-top uk-text-center">
                 {{-- <a href="" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></a> --}}
-                <button type="submit" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></button>
+                <button type="submit" class="uk-btn uk-btn-secondary">Soumettre <span uk-icon="chevron-right"></span></button>
             </div>
         </form>
 
@@ -1081,16 +1085,16 @@
 <!-- Customize form modal start-->
 <div id="modal-customize" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-        <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove  uk-primary-bg border">Customize Trip</h3>
+        <h3 class="uk-modal-title uk-text-center uk-white uk-margin-remove  uk-primary-bg border">Personnaliser le voyage</h3>
         <h3 class="uk-text-center uk-margin-remove">{{ $data->trip_title }}</h3>
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <form class="uk-contact-form uk-margin-top" action="{{ route('customize-trip.post') }}" method="POST">
             @csrf
             <input type="hidden" id="g_recaptcha_response2" name="g_recaptcha_response"/>
-            <h3 class="uk-secondary uk-margin-remove">Trip Information</h3>
+            <h3 class="uk-secondary uk-margin-remove">Informations sur le voyage</h3>
             <div class=" uk-child-width-1-2@m uk-grid">
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="pname">Package Name*</label>
+                    <label class="uk-form-label uk-text-bold" for="pname">Nom du paquet*</label>
                     <div class="uk-form-controls">
                         <select class="uk-select" aria-label="Select" name="trip_id" id="trip_id" required>
                             <option value="{{$data->id}}">{{$data->trip_title}}</option>
@@ -1098,19 +1102,19 @@
                     </div>
                 </div>
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="people">Number of People*</label>
+                    <label class="uk-form-label uk-text-bold" for="people">Nombre de personnes*</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" id="people" name="people" required type="number">
                     </div>
                 </div>
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="days">Duration (In Days)*</label>
+                    <label class="uk-form-label uk-text-bold" for="days">Durée (En jours)*</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="days" name="days" required type="number" placeholder="In Days">
+                        <input class="uk-input" id="days" name="days" required type="number" placeholder="En jours">
                     </div>
                 </div>
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="date">Trip Start Date*</label>
+                    <label class="uk-form-label uk-text-bold" for="date">Date de début*</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" id="date" name="date" required type="date">
                     </div>
@@ -1119,21 +1123,21 @@
             @if($data->latest_info)
                 <!-- new element added -->
                 <div class="uk-flex uk-flex-middle uk-margin-top">
-                    <p class="uk-margin-remove">To know more about our latest trip information:</p>
-                    <button class="uk-button uk-button-default uk-info-button" type="button" uk-toggle="target: .toggle">View Info</button>
+                    <p class="uk-margin-remove">Pour en savoir plus sur nos dernières informations de voyage:</p>
+                    <button class="uk-button uk-button-default uk-info-button" type="button" uk-toggle="target: .toggle">voir les informations</button>
                 </div>
                 <p class="toggle"></p>
                 <div class="toggle" hidden>
-                    <h3 class="uk-secondary uk-margin-top">More Information</h3>
+                    <h3 class="uk-secondary uk-margin-top">Plus d'informations</h3>
                     <div class=" uk-padding uk-light-bg border uk-margin-remove ">{!! $data->latest_info !!}</div>
                 </div>
             @endif
             <!-- new element added -->
             <hr>
-            <h3 class="uk-secondary uk-margin-remove">Personal Information</h3>
+            <h3 class="uk-secondary uk-margin-remove">Informations personnelles</h3>
             <div class=" uk-child-width-1-2@m uk-grid">
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="fname">Full Name*</label>
+                    <label class="uk-form-label uk-text-bold" for="fname">Nom et prénom*</label>
                     <div class="uk-form-controls">
                         <input class="uk-input" id="fname" name="fname" required type="text">
                     </div>
@@ -1145,7 +1149,7 @@
                     </div>
                 </div>
                 <div class="uk-margin-small-top">
-                    <label class="uk-form-label uk-text-bold" for="fcountry">Country*</label>
+                    <label class="uk-form-label uk-text-bold" for="fcountry">Pays*</label>
                     <select name="country" class="uk-select" id="country" required>
                         @include('themes.default.common.country')
                     </select>
@@ -1158,34 +1162,34 @@
                 </div>
             </div>
             <div class="uk-margin-small-top">
-                <label class="uk-form-label uk-text-bold" for="requirement">Special Requirement</label>
+                <label class="uk-form-label uk-text-bold" for="requirement">Exigence spéciale</label>
                 <div class="uk-form-controls">
                     <textarea name="message" class="uk-textarea" rows="3" required></textarea>
                 </div>
             </div>
             <div class="uk-margin-top uk-text-center">
                 {{-- <a href="" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></a> --}}
-                <button type="submit" class="uk-btn uk-btn-secondary">Submit Now <span uk-icon="chevron-right"></span></button>
+                <button type="submit" class="uk-btn uk-btn-secondary">Soumettre <span uk-icon="chevron-right"></span></button>
             </div>
         </form>
 
     </div>
 </div>
-<div class="uk-flex fixed-date uk-hidden@m">  
+<div class="uk-flex fixed-date uk-hidden@m">
     <a href="#offcanvas-usage" class=" uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top" uk-toggle><span uk-icon="icon: calendar; ratio: 1.5"  ></span></a>
-</div> 
+</div>
 <script>
   // Custom smooth scrolling with offset
   document.querySelectorAll('.sidenav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function(event) {
-          event.preventDefault(); 
+          event.preventDefault();
 
           const target = document.querySelector(this.getAttribute("href"));
 
           if (target) {
               window.scrollTo({
                   top: target.offsetTop - 80,
-                 
+
               });
           }
       });
@@ -1213,9 +1217,9 @@
 @push('scripts')
     <script>
         window.isAuthenticated = @json(Auth::check());
-    
+
         document.addEventListener("DOMContentLoaded", function () {
-            let today = new Date().toISOString().split("T")[0]; 
+            let today = new Date().toISOString().split("T")[0];
             document.getElementById("date").setAttribute("min", today);
         });
     </script>
@@ -1227,14 +1231,14 @@
 
                 if (!window.isAuthenticated) {
                     let tripUri = "{{ $data->uri }}"; // current trip identifier
-                
+
                     $.post("{{ route('save.intended.trip') }}", {
                         _token: $('meta[name="csrf-token"]').attr('content'),
                         uri: tripUri
                     }).always(function () {
                         window.location.href = "{{ route('login.form') }}";
                     });
-                
+
                     return;
                 }
                 // alert('ok'); // Debugging: Check if button click is detected
@@ -1269,7 +1273,7 @@
                     }
                 });
             });
-            
+
             //for pdf download
             $(document).on('click', '.download-pdf-btn', function (e) {
                 if (!window.isAuthenticated) {

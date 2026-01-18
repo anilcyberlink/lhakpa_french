@@ -60,7 +60,7 @@
                         </div>
                         <div class="uk-width-1-2@m uk-flex-first uk-flex-last@m ">
                             <div style="z-index: 100;">
-                                <img src="{{!empty($row->page_thumbnail) ? asset('uploads/original/'.$row->page_thumbnail) : asset('theme-assets/img/mountain/mountain8.jpeg')}}" class="border uk-same-height1 cover" alt="">
+                                <img src="{{!empty($row->page_thumbnail) ? asset('uploads/original/'.$row->page_thumbnail) : asset('theme-assets/img/mountain/mountain8.jpeg')}}" class="border uk-same-height1 cover" alt="{{$row->post_title}}">
                             </div>
                         </div>
                     </div>

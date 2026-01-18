@@ -23,13 +23,13 @@
         <div class="uk-grid uk-flex">
             <div class="uk-width-1-4@m uk-flex-first@m uk-flex-last">
                 <div class="uk-sidebar">
-                    <h2 class="uk-primary uk-margin-remove">related news</h2>
+                    <h2 class="uk-primary uk-margin-remove">nouvelles liées</h2>
                     <ul class="uk-related-news">
                         @foreach ($related->take(4) as $value)
                             <li><a href="{{ route('page.pagedetail', $value->uri) }}" class="line-two">{{$value->post_title}}</a></li>
                         @endforeach
                     </ul>
-                    <p>Share this Trip:</p>
+                    <p>Partagez ce voyage:</p>
                     <div>
                         <a href="{{$setting->youtube_link}}" class="uk-icon-button uk-margin-small-right"><i class="fa-brands fa-youtube"></i></a>
                         <a href="{{$setting->facebook_link}}" class="uk-icon-button  uk-margin-small-right"><i class="fa-brands fa-facebook-f"></i></a>

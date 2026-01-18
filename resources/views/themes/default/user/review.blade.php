@@ -1,11 +1,11 @@
 @extends('themes.default.common.master')
 @section('content')
-<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed uk-grey-bg" style="height:400px;" data-src="assets/img/bg/pattern.png" alt="" uk-img>
+<section class=" uk-cover-container uk-position-relative uk-flex uk-flex-middle uk-background-norepeat uk-background-cover uk-background-top-center uk-background-fixed uk-grey-bg" style="height:400px;" data-src="{{ asset('theme-assets/img/bg/pattern.png') }}" uk-img>
     <div class="uk-container uk-width-1-1  uk-position-relative">
         <div class="uk-flex uk-flex-middle uk-flex-center uk-grid-collapse " uk-grid>
             <div class="uk-width-1-1@m">
                 <div class="uk-sub-banner-font uk-text-center">
-                    <h2 class="uk-secondary uk-margin-large-top">Your Travel Opinion</h2>
+                    <h2 class="uk-secondary uk-margin-large-top">Votre avis de voyage</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             @include('themes.default.user.sidebar')
             </div>
             <div class="uk-width-3-4@m">
-                <p class="uk-visible@m uk-white" style="margin:2rem 0px 5rem 0;">Your review about the travel :
+                <p class="uk-visible@m uk-white" style="margin:2rem 0px 5rem 0;">Votre avis sur le voyage :
                 </p>
                 @if($data->count() > 0)
                     @foreach ($data as $row)
@@ -39,7 +39,7 @@
                         <!--  -->
                     @endforeach
                 @else
-                    <h3>Review is empty!</h3>
+                    <h3>L'avis est vide !</h3>
                 @endif
                 @if($data->count() > 0)
                     @include('themes.default.user.pagination')

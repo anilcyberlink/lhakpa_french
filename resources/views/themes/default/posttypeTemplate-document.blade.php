@@ -24,7 +24,7 @@
 <section class="uk-section">
    <!--document section-->
    <div class="uk-container">
-       <h1 class="uk-secondary uk-margin-remove">Our offical legal documents</h1>
+       <h1 class="uk-secondary uk-margin-remove">Nos documents juridiques officiels</h1>
        <span class="dotted-line-primary"></span>
        <div class="uk-margin-medium-top uk-margin-bottom">
             <p>
