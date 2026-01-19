@@ -264,10 +264,18 @@ class FrontpageController extends Controller
         $setting = SettingModel::where('id',1)->first();
         $experts = TeamModel::where('show_in_home',1)->get();
         $international = AssociatedPostModel::where('in_detail',1)->get();
-        // dd($international);
+        $aboutPage= PostTypeModel::where('id', '22')->first();
+        $womenPage= PostTypeModel::where('id', '33')->first();
+        $foundationPage= PostTypeModel::where('id', '27')->first();
+        $internationalPage= PostTypeModel::where('id', '39')->first();
+        $teamPage= PostTypeModel::where('id', '38')->first();
+        $suggestionPage= PostTypeModel::where('id', '31')->first();
+        $termPage= PostTypeModel::where('id', '41')->first();
+        $whyusPage= PostTypeModel::where('id', '24')->first();
+        // dd($aboutPage,$womenPage,$foundationPage);
         return view('themes.default.tripdetail', compact('data', 'trip_review',
             'cost_includes', 'cost_excludes', 'itinerary','guidelines','experts','international',
-            'photo_videos', 'activity','related_trips','photos','videos','local','banner','setting','schedules','faqs'));
+            'photo_videos', 'activity','related_trips','photos','videos','local','banner','setting','schedules','faqs','aboutPage','womenPage','foundationPage','internationalPage','suggestionPage','teamPage','termPage','whyusPage'));
     }
 
     public function downloadPdf($id)
