@@ -452,14 +452,14 @@
                                 <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
                             </div>
                             <div class="uk-flex">
-                                <a href="https://lhakpatrekking.com/type-team-members" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
+                                <a href="{{route('page.posttype_detail',$teamPage->uri)}}" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
                             </div>
 
                         </div>
                     </div>
                 @endif
                     <div class="uk-flex">
-                        <a href="https://lhakpatrekking.com/type-suggestion" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Message du directeur</a>
+                        <a href="{{route('page.posttype_detail',$suggestionPage->uri)}}" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Message du directeur</a>
                     </div>
                     <div class="uk-light-bg uk-padding-small uk-margin-top">
                         <div class=" text-secondary-light uk-text-bold">Besoin d'aide:</div>
@@ -481,13 +481,13 @@
                         </div>
                     </div>
                     <div class="uk-flex">
-                        <a href="https://lhakpatrekking.com/type-about-us" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Lhakpa Trekking?</a>
+                        <a href="{{route('page.posttype_detail',$aboutPage->uri)}}" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Lhakpa Trekking?</a>
                     </div>
                     <div class="uk-flex">
-                        <a href="https://lhakpatrekking.com/type-women-empowerment" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Women Empowerment</a>
+                        <a href="{{route('page.posttype_detail',$womenPage->uri)}}" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Women Empowerment</a>
                     </div>
                     <div class="uk-flex">
-                        <a href="https://lhakpatrekking.com/type-mingmar-foundation" class="uk-extra uk-grey-bg uk-book-btn border uk-margin-small-top ">Education Foundation</a>
+                        <a href="{{route('page.posttype_detail',$foundationPage->uri)}}" class="uk-extra uk-grey-bg uk-book-btn border uk-margin-small-top ">Education Foundation</a>
                     </div>
                     <div uk-sticky="offset: 150; end: #my-id; media: @l" style="    z-index: 1;">
                         <div class="uk-light-bg border uk-padding-small uk-margin-top">
@@ -522,14 +522,14 @@
                                <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
                             </div>
                             <div class="uk-flex">
-                                <a href="https://lhakpatrekking.com/type-international-team" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
+                                <a href="{{route('page.posttype_detail',$internationalPage->uri)}}" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Tout afficher</a>
                             </div>
                         </div>
                         <div class="uk-flex">
-                            <a href="https://lhakpatrekking.com/type-terms-conditons" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Conditions générales</a>
+                            <a href="{{route('page.posttype_detail',$termPage->uri)}}" class="uk-extra uk-primary-bg uk-book-btn border uk-margin-small-top ">Conditions générales</a>
                         </div>
                         <div class="uk-flex">
-                            <a href="https://lhakpatrekking.com/type-why-us" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Pourquoi Lhakpa Trekking?</a>
+                            <a href="{{route('page.posttype_detail',$whyusPage->uri)}}" class="uk-extra uk-secondary-bg uk-book-btn border uk-margin-small-top ">Pourquoi Lhakpa Trekking?</a>
                         </div>
                     </div>
             </div>
