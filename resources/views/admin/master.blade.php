@@ -100,7 +100,7 @@
             <div class="sidebar-left-content nano-content">
                 <!-- Start: Sidebar Left Menu -->
                 <ul class="nav sidebar-menu">
-                    <li class="sidebar-label pt15"> Menu </li>
+                    <li class="sidebar-label pt15" style="color: #ffffff;">French Dashboard</li>
                     <li class="{{ Request::segment(2) == 'dashboard' ? 'active' : '' }}">
                         <a href="{{ url('admin/dashboard') }}">
                             <span class="glyphicon glyphicon-home"></span>

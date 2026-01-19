@@ -15,6 +15,6 @@
       <li class="crumb-trail">Dashboard </li>
     </ol>
   </div>
-  
+
   <div class="topbar-right"> @include('admin.common.action') </div>
 </header>
