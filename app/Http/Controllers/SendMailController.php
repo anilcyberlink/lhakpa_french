@@ -11,7 +11,7 @@ use App\Model\Subscriber;
 use App\Model\VerifyUser;
 use DB;
 
-class SendMailController extends Controller 
+class SendMailController extends Controller
 {
   public function send_mail(Request $request)
  {
@@ -28,7 +28,7 @@ class SendMailController extends Controller
 
  public function index(Request $request)
     {
-        $users = Subscriber::orderBy('id','desc')->paginate(100); 
+        $users = Subscriber::orderBy('id','desc')->paginate(100);
         $news=Newsletter::orderBy('id','desc')->get();
         return view('admin.newsletter.send_newsletter', compact('users','news'));
     }
@@ -111,12 +111,12 @@ class SendMailController extends Controller
     $data=Newsletter::find($id);
     $del=$data->delete();
     return back()->with('success','Newsletter deleted successfully');
-    
+
   }
 
   public function usercreate(Request $request)
   {
-    if($request->isMethod('get')){       
+    if($request->isMethod('get')){
          return view('admin.newsletter.user-create');
     }
 
@@ -125,6 +125,7 @@ class SendMailController extends Controller
          'email'=>'required|unique:subscribers,email|email'
       ]);
         $data['email']=$request->email;
+        $data['name']=$request->name;
         $store=Subscriber::create($data);
         if($store)
         {
@@ -162,7 +163,7 @@ class SendMailController extends Controller
           $request->validate([
           'email'=>'required|email|unique:subscribers,email,'.$id,
       ]);
-        
+
           $data=Subscriber::find($id);
          $data['email']=$request->email;
          $update=$data->save();
@@ -180,14 +181,14 @@ class SendMailController extends Controller
     $verified = VerifyUser::where('user_id',$id)->delete();
     $del=$data->delete();
     return back()->with('success','User deleted successfully');
-    
+
   }
 
   private function convertToCsv($data){
     $csv = '';
     $headers = array_keys($data[0]->toArray());
     $csv .= implode(',', $headers)."\n";
-    
+
     foreach($data as $row){
         $csv .= implode(',',$row->toArray())."\n";
     }
@@ -199,12 +200,12 @@ class SendMailController extends Controller
       $csvData = $this->convertToCsv($data);
   //   dd($csvData);
       $filename  = 'Subscriber_List.csv';
-      
+
       $headers = [
           'Content-Type'=>'text/csv',
           'Content-Disposition'=> 'attachment; filename="'. $filename . '"',
       ];
-      
+
       return response()->streamDownload(function() use($csvData){
           echo $csvData;
       }, $filename, $headers);

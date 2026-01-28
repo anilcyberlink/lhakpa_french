@@ -12,16 +12,16 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Name</th>
-                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->name ?? $data->name }}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->email ?? $data->email }}</td>
                 </tr>
                 <tr>
                     <th>User Downloads</th>
                     <td>
-                        @if($user->downloadedPdfs->count())
+                        @if($user && $user->downloadedPdfs->count())
                             <ul>
                                 @foreach($user->downloadedPdfs as $pdf)
                                     <li>{{ $pdf->trip_title }} ({{ $pdf->created_at->format('Y-m-d') ?? 'N/A' }})</li>

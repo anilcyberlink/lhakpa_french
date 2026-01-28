@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('title','User List')
 @section('breadcrumb')
-<!-- <a href="{{ route('subscriber.create') }}" class="btn btn-primary btn-sm">Add Subscriber</a> -->
+<a href="{{ route('subscriber.create') }}" class="btn btn-primary btn-sm">Add Emails</a>
 <a href="{{route('download')}}" class="btn btn-primary btn-sm">Download CSV</a>
 @endsection
 @section('content')
@@ -43,9 +43,9 @@
 
 @stop
 @section('libraries')
-<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/media/js/jquery.dataTables.js')}}"></script> 
-<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}"></script> 
-<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js')}}"></script> 
+<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/media/js/jquery.dataTables.js')}}"></script>
+<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js')}}"></script>
+<script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js')}}"></script>
 <script src="{{asset( env('PUBLIC_PATH') . '/vendor/plugins/datatables/media/js/dataTables.bootstrap.js')}}"></script>
 <script type="text/javascript">
 
