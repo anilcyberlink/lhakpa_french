@@ -270,7 +270,7 @@
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav uk-position-relative">
                                     <li>
-                                        <a> Entreprise <span uk-navbar-parent-icon></span></a>
+                                        <a> Agence <span uk-navbar-parent-icon></span></a>
                                         <div class="uk-dropbar uk-dropbar-top uk-pattern-bg" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                             <div class="uk-position-relative uk-visible-toggle uk-light uk-container " tabindex="-1" uk-slider="autoplay: true; autoplay-interval:1500;">
                                                 <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid">
@@ -297,7 +297,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a>Destination <span uk-navbar-parent-icon></span></a>
+                                        <a>Nos Destination <span uk-navbar-parent-icon></span></a>
                                         <div class="uk-dropbar uk-dropbar-top" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class=" uk-container">
                                             <div class="mega-border-top">
@@ -354,7 +354,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a>activités <span uk-navbar-parent-icon></span></a>
+                                    <a>Nos activités <span uk-navbar-parent-icon></span></a>
                                     <div class="uk-dropbar uk-dropbar-top" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class="uk-container">
                                             <div class="mega-border-top">
@@ -402,7 +402,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#"> Style de voyage <span uk-navbar-parent-icon></span></a>
+                                    <a href="#">Styles de voyage<span uk-navbar-parent-icon></span></a>
                                     <div class="uk-dropbar uk-dropbar-top uk-pattern-bg" uk-drop="boundary:!.uk-main-header-transparent; stretch: x; flip: false; animation: reveal-top; delay-hide: 10; duration: 700;">
                                         <div class="uk-position-relative uk-visible-toggle uk-light uk-container " tabindex="-1" uk-slider>
                                             <div class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid" uk-height-match=".info-box">
