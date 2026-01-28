@@ -685,6 +685,46 @@ class FrontpageController extends Controller
     }
     public function subscribe(Request $request)
     {
+        try {
+            $g_recaptcha_response = $request->input('g_recaptcha_response');
+            $result = $this->getCaptcha($g_recaptcha_response);
+
+            if (!$result || $result->success !== true) {
+                return back()->withErrors([
+                    'captcha' => 'Captcha verification failed. Please try again.'
+                ])->withInput();
+            }
+
+            // Validation
+            $validator = Validator::make($request->all(), [
+                'name'  => 'required|string|max:255',
+                'email' => 'required|email|unique:subscribers,email',
+            ]);
+
+            if ($validator->fails()) {
+                return back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            // dd($request->all());
+            // Create subscriber
+            Subscriber::create([
+                'name'     => $request->name,
+                'email'    => $request->email,
+                'typeOf'   => 0,
+            ]);
+
+            return back()->with('success', 'You have been subscribed successfully.');
+
+        } catch (\Throwable $e) {
+            return back()->withErrors([
+                'error' => 'Something went wrong. Please try again later.'
+            ]);
+        }
+    }
+    public function subscribe_old(Request $request)
+    {
         // $g_recaptcha_response = $request->input('g_recaptcha_response');
         // $result = $this->getCaptcha($g_recaptcha_response);
         // dd($result);
