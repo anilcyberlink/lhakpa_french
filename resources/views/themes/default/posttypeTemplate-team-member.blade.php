@@ -50,7 +50,12 @@
                                             <div class="uk-overlay uk-overlay-default uk-position-bottom uk-overlay-bottom uk-title-font">
                                                 <h3 class="uk-secondary uk-margin-remove">{{ $team->name }}</h3>
                                                 <span class="uk-text-uppercase uk-white uk-margin-remove">{{ $team->position }}</span>
+                                                <h3 class="uk-secondary uk-margin-remove">SEE MESSAGE <i class="fa-solid fa-circle-arrow-right uk-secondary f-30"></i></h3>
                                             </div>
+                                            <!-- <span class="see-message-hint uk-position-bottom-right uk-margin-small-right uk-margin-small-bottom uk-text-small"
+                                                  style="pointer-events:none; color:#83b43c;">
+                                                See message →
+                                            </span> -->
                                         </a>
                                     </div>
                                 </div>

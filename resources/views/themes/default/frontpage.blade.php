@@ -94,7 +94,7 @@
                     <!-- <span class="uk-white uk-contents">  -->
                      {!! $about_us->content !!}
                      <!-- </span> -->
-                    <a href="{{route('page.posttype_detail',$about_us->uri)}}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
+                    <a href="{{route('page.posttype_detail',$about_us->uri)}}" class="uk-about-btn">En savoir plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
          <div class="uk-grid">
                <div class="uk-width-1-4@m">
                   <div class="uk-title-font">
-                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>FORFAITS</span>
+                     <span class="uk-secondary dotted-line-black"><i class="fa-solid fa-person-hiking uk-margin-small-right"></i>Nos Circuits</span>
                      <h1 class="uk-primary">{{$setting->text2_title}}</h1>
                   </div>
                </div>
@@ -305,7 +305,7 @@
                                             </div>
                                         </div>
                                         <div class="uk-width-1-4@m uk-text-left uk-text-right@m">
-                                             <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-top"></i></a>
+                                             <a href="{{ url('page/' . tripurl($row->uri)) }}" class="uk-about-btn">En savoir plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-top"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -355,7 +355,7 @@
                         <!--   <p class="uk-white">{{$trek->sub_title}}</p><br> <br>-->
                         <!--</div>-->
                         <div>
-                           <a href="{{ route('trekking-list',$trek->uri) }}" class="uk-about-btn">Apprendre encore plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
+                           <a href="{{ route('trekking-list',$trek->uri) }}" class="uk-about-btn">En savoir plus <i class="fa-solid fa-circle-arrow-right uk-margin-small-left"></i></a>
                         </div>
                      </div>
 
