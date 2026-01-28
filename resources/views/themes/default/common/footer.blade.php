@@ -20,6 +20,59 @@
 
         </div>
     </div>
+
+    <div class="uk-container uk-padding-small"
+        style="background:#f3e6e6; border-radius:6px;">
+
+        <div class="uk-flex uk-flex-column uk-flex-center uk-text-center">
+
+            <!-- Text -->
+            <div class="uk-margin-small-bottom">
+                <h4 class="uk-margin-remove uk-text-bold">Join Our Community</h4>
+                <span class="uk-text-muted">Be the first to know about new treks & offers</span>
+            </div>
+
+            <!-- Form -->
+            <form action="{{route('subscribe')}}" method="POST" class="uk-grid-small uk-flex uk-flex-center uk-child-width-auto@s" uk-grid>
+                @csrf
+                <input name="typeOf" type="hidden" value="0"/>
+                <input type="hidden" id="g_recaptcha_response" name="g_recaptcha_response"/>
+
+                <div>
+                    <input
+                        class="uk-input uk-border-pill uk-form-small"
+                        type="text"
+                        placeholder="Your name"
+                        name="name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <input
+                        class="uk-input uk-border-pill uk-form-small"
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <button
+                        class="uk-button uk-border-pill uk-form-small btn-theme-green"
+                        type="submit"
+                        style="padding:0 28px; font-weight:600;"
+                    >
+                        SUBSCRIBE
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
     </div>
     <footer class="uk-padding bg-primary ">
         <div uk-grid  uk-scrollspy="cls: uk-animation-fade;  delay: 300; repeat: false">
@@ -98,46 +151,75 @@
 
     <script src="https://www.google.com/recaptcha/api.js?render={{env('SITE_KEY')}}"></script>
 
-<script>
-    grecaptcha.ready(function () {
-        function executeRecaptcha() {
-            grecaptcha.execute('<?php echo env("SITE_KEY"); ?>', {action: 'homepage'}).then(function (token) {
-                document.getElementById('g_recaptcha_response').value = token;
-                document.getElementById('g_recaptcha_response2').value = token;
-            });
-        }
+    <script>
+        grecaptcha.ready(function () {
+            function executeRecaptcha() {
+                grecaptcha.execute('<?php echo env("SITE_KEY"); ?>', {action: 'homepage'}).then(function (token) {
+                    document.getElementById('g_recaptcha_response').value = token;
+                    document.getElementById('g_recaptcha_response2').value = token;
+                });
+            }
 
-        // Initial execution of reCAPTCHA
-        executeRecaptcha();
+            // Initial execution of reCAPTCHA
+            executeRecaptcha();
 
-        // Refresh the reCAPTCHA token every 100 seconds (less than 2 minutes)
-        setInterval(executeRecaptcha, 900000);
-    });
+            // Refresh the reCAPTCHA token every 100 seconds (less than 2 minutes)
+            setInterval(executeRecaptcha, 900000);
+        });
 
-</script>
-<!-- WhatsApp Chat Button -->
-<a href="https://wa.me/9849055448"
-   target="_blank"
-   style="
-      position:fixed;
-      bottom:100px;   /* moved above Tawk.to */
-      right:20px;
-      background-color:#25D366;
-      color:white;
-      border-radius:50%;
-      width:60px;
-      height:60px;
-      text-align:center;
-      font-size:30px;
-      z-index:1000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      ">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    </script>
+    <!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/9849055448"
+    target="_blank"
+    style="
+        position:fixed;
+        bottom:100px;   /* moved above Tawk.to */
+        right:20px;
+        background-color:#25D366;
+        color:white;
+        border-radius:50%;
+        width:60px;
+        height:60px;
+        text-align:center;
+        font-size:30px;
+        z-index:1000;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        ">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+<style>
+    .uk-form-small {
+        height: 36px;
+        font-size: 14px;
+    }
 
-    </body>
-    </html>
+    .uk-button-primary {
+        font-weight: 600;
+        letter-spacing: 0.4px;
+    }
+
+    .uk-input {
+        background: #fff;
+    }
+    .btn-theme-green {
+        background-color: #7d0020; /* theme green */
+        color: #ffffff;
+        border: none;
+    }
+
+    .btn-theme-green:hover,
+    .btn-theme-green:focus {
+        background-color: #7aa92f;
+        color: #ffffff;
+    }
+
+    .btn-theme-green:active {
+        background-color: #6c9b28;
+    }
+</style>
+</body>
+</html>
