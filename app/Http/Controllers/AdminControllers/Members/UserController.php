@@ -29,7 +29,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {     
+    {
         return view('admin.users.create');
     }
 
@@ -119,7 +119,7 @@ class UserController extends Controller
     }
 
     public function admin_user(){
-        
+
         return "Admin user";
     }
 
@@ -127,7 +127,7 @@ class UserController extends Controller
         //
         return "Agent user";
     }
-    
+
     public function userprofile(){
         $data = Auth::user();
         return view('admin.users.userprofile',compact('data'));
@@ -145,15 +145,15 @@ class UserController extends Controller
             return redirect()->back();
         }
 
-        $user = User::find(Auth::user()->id);  
-        if($user){           
+        $user = User::find(Auth::user()->id);
+        if($user){
            if(Hash::check($request['old_password'],$user->password)){
             $user->password = bcrypt($request['password']);
             $user->save();
             return redirect()->back()->with('message','Your password has been updated.');
            }else{
             return redirect()->back()->with('message','The entered does not match your current password!');
-           }           
+           }
         }
 
        // return view('admin.users.passwordEdit');
@@ -164,14 +164,14 @@ class UserController extends Controller
             return view('admin.users.changepassword');
         }else{
             return redirect()->back();
-        }        
+        }
     }
-    
+
     public function viewDetail($id)
     {
         $data = Subscriber::where('id',$id)->first();
         $user = User::where('id',$data->user_id)->with('downloadedPdfs')->first();
         // dd($id,$user,$data);
-        return view('admin.newsletter.view-user-detail',compact('user'));
+        return view('admin.newsletter.view-user-detail',compact('user','data'));
     }
 }
