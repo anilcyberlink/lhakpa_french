@@ -30,6 +30,8 @@ Route::get('wishlist/{id?}', 'UserController@add_wishlist')->name('add-wishlist'
 Route::get('delete-wishlist/{id}', 'UserController@delete_wishlist')->name('delete-wishlist');
 Route::get('/all-reviews','UserController@all_review')->name('all-review');
 
+Route::view('/thank-you-happy', 'themes.default.thankyou-happy')->name('thankyou.happy');
+Route::view('/thank-you-support', 'themes.default.thankyou-support')->name('thankyou.support');
 
 /************************** Bibek Routes Ends ***********************************/
 
