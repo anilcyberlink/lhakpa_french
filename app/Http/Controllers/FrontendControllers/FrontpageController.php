@@ -597,7 +597,7 @@ class FrontpageController extends Controller
     }
     public function post_feedback(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $g_recaptcha_response = $request->input('g_recaptcha_response');
         $result = $this->getCaptcha($g_recaptcha_response);
         if ($result->success == true) {
@@ -607,6 +607,7 @@ class FrontpageController extends Controller
                 'guide_name' => 'required|string|max:255',
                 'full_name' => 'nullable|string|max:255',
                 'nationality' => 'required|string|max:100',
+                'feedback_consent' => 'required',
 
                 'overall' => 'required|in:excellent,very-good,good,fair,poor',
                 'guide' => 'required|in:excellent,very-good,good,fair,poor',
@@ -675,9 +676,16 @@ class FrontpageController extends Controller
                 'future_destinations_other' => $validated['future_destinations_other'] ?? null,
                 'heard_about' => $validated['heard_about'],
                 'heard_about_other' => $validated['heard_about_other'] ?? null,
+                'feedback_consent' => $validated['feedback_consent'],
             ]);
+            if($request->overall== "excellent" || $request->overall== "very-good")
+            {
+                return redirect()->route('thankyou.happy')->with('success', 'Merci pour vos commentaires !');
+            }else{
+                return redirect()->route('thankyou.support')->with('success', 'Merci pour vos commentaires !');
+            }
 
-            return redirect()->back()->with('success', 'Merci pour vos commentaires !');
+            // return redirect()->back()->with('success', 'Merci pour vos commentaires !');
 
         } else {
             return back()->with('error', 'Tu es un robot');

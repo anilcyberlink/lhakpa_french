@@ -399,6 +399,13 @@
                                    style="margin-top: 15px; display: {{ old('heard_about') == 'other' ? 'block' : 'none' }};">
                         </div>
                     </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" name="feedback_consent" id="feedback_consent" value="1" required>
+                        <label class="form-check-label" for="feedback_consent">
+                            I agree that my feedback may be displayed on the website and used on our official social media channels for promotional purposes.
+                        </label>
+                    </div>
+
 
                     <div class="uk-text-center">
                         <button type="submit" class="inquiry-btn" style="padding: 15px;font-size: 15px;margin-bottom: 17px;">Submit Feedback</button>

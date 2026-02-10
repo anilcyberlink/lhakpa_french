@@ -45,6 +45,7 @@ class FeedbackModel extends Model
         'future_destinations_other',
         'heard_about',
         'heard_about_other',
+        'feedback_consent',
     ];
 
     protected $casts = [
